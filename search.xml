@@ -451,19 +451,16 @@
   <entry>
     <title>redis命令</title>
     <url>/2020/06/24/redis%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>##开启redis命令</p>
+    <content><![CDATA[<p><strong>开启redis命令</strong></p>
 <p>systemctl start pedis.service</p>
 ]]></content>
   </entry>
   <entry>
     <title>linux防火墙常用命令</title>
     <url>/2020/06/24/linux%E9%98%B2%E7%81%AB%E5%A2%99%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>##开启防火墙端口##</p>
-<p>​    firewall-cmd –zone=public –add-port=80/tcp –permanent</p>
-<p>##重启防火墙##</p>
-<p>systemctl restart firewalld.service</p>
-<p>##查看已经开放的端口：##</p>
-<p>firewall-cmd –list-ports</p>
+    <content><![CDATA[<h5 id="开启防火墙端口"><a href="#开启防火墙端口" class="headerlink" title="开启防火墙端口"></a>开启防火墙端口</h5><p>​    firewall-cmd –zone=public –add-port=80/tcp –permanent</p>
+<h5 id="重启防火墙"><a href="#重启防火墙" class="headerlink" title="重启防火墙"></a>重启防火墙</h5><p>systemctl restart firewalld.service</p>
+<h5 id="查看已经开放的端口"><a href="#查看已经开放的端口" class="headerlink" title="查看已经开放的端口"></a><strong>查看已经开放的端口</strong></h5><p>firewall-cmd –list-ports</p>
 ]]></content>
   </entry>
 </search>
