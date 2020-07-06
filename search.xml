@@ -1,78 +1,482 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>Tomcat中配置去掉项目名</title>
-      <link href="/2020/07/06/tomcat%E5%8E%BB%E6%8E%89%E9%A1%B9%E7%9B%AE%E5%90%8D/"/>
-      <url>/2020/07/06/tomcat%E5%8E%BB%E6%8E%89%E9%A1%B9%E7%9B%AE%E5%90%8D/</url>
-      
-        <content type="html"><![CDATA[<p>负载均衡中war放在tomcat中时，访问会带有包名。</p><h5 id="打开tomcat-conf-server-xml-把"><a href="#打开tomcat-conf-server-xml-把" class="headerlink" title="打开tomcat/conf/server.xml,把"></a>打开tomcat/conf/server.xml,把</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context path&#x3D;&quot;&#x2F;&quot; docBase&#x3D;&quot;&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;tomcat-8102&#x2F;webapps&#x2F;blog&quot; reloadable&#x3D;&quot;true&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure><p>添加到<code>&lt;Host&gt;&lt;/Host&gt;</code>标签中。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> tomcat nginx 负载均衡 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>IntellijIDEA快捷使用</title>
-      <link href="/2020/07/02/IntellijIDEA%E5%BF%AB%E6%8D%B7%E4%BD%BF%E7%94%A8/"/>
-      <url>/2020/07/02/IntellijIDEA%E5%BF%AB%E6%8D%B7%E4%BD%BF%E7%94%A8/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Intellij-IDEA快捷使用"><a href="#Intellij-IDEA快捷使用" class="headerlink" title="Intellij IDEA快捷使用"></a>Intellij IDEA快捷使用</h1><h2 id="1-快捷键"><a href="#1-快捷键" class="headerlink" title="1. 快捷键"></a>1. 快捷键</h2><h3 id="1-1-按键说明"><a href="#1-1-按键说明" class="headerlink" title="1.1. 按键说明"></a>1.1. 按键说明</h3><table><thead><tr><th>按键</th><th>说明</th></tr></thead><tbody><tr><td>+</td><td>需要同时按下加号左右两侧的键</td></tr><tr><td>,</td><td>按下逗号左侧的键后，松开，然后按下逗号右侧的键</td></tr><tr><td>Ctrl</td><td>控制键，键盘上标记了<code>Ctrl</code>的键，在Mac键盘上标记为<code>control</code></td></tr><tr><td>Shift</td><td>上档键，键盘上标记了<code>Shift</code>的键</td></tr><tr><td>Alt</td><td>切换键，键盘上标记了<code>Alt</code>的键，在Mac键盘上与<code>Option</code>是同一个键</td></tr><tr><td>Command</td><td>命令键，<strong>Mac键盘独有</strong>，标记了<code>Command</code>的键</td></tr><tr><td>Enter</td><td>回车键，键盘上标记了<code>Enter</code>的键，在Mac键盘上与<code>return</code>是同一个键</td></tr><tr><td>Space</td><td>空格键，键盘上最下方、最大的按键</td></tr><tr><td>Up / Down</td><td>方向上/方向下，通常在键盘上标记了向上/向下的箭头</td></tr></tbody></table><p>某些快捷键可能与操作系统或其它软件的全局快捷键是冲突的，则按下会无效或执行其它命令，可以在Intellij IDEA的设置的<strong>Keymap</strong>中修改为其它按键。</p><p>以下快捷键是Intellij IDEA的默认风格快捷键，如果改成了Eclipse风格或其它风格，请参考所更改的设置。</p><p>标记了<code>[!]</code>是可能存在冲突的快捷键。</p><p>全部快捷键可在Intellij IDEA的设置的<strong>Keymap</strong>中查看，或者查看官方文档：<a href="https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf?_ga=2.5349558.422550521.1580708138-1891300040.1568641704" target="_blank" rel="noopener">https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf?_ga=2.5349558.422550521.1580708138-1891300040.1568641704</a></p><p>在各种编辑软件中都会使用到的快捷键可能不会被列举到以下各表中，例如<code>Ctrl</code> + <code>C</code>表示<strong>复制</strong>，在各种编辑软件中都是这样设计的，就不重复列举了。</p><h3 id="1-2-推荐快捷键"><a href="#1-2-推荐快捷键" class="headerlink" title="1.2. 推荐快捷键"></a>1.2. 推荐快捷键</h3><table><thead><tr><th>Windows / Linux</th><th>Mac OS</th><th>说明</th></tr></thead><tbody><tr><td><strong>[!]</strong> Ctrl + Space</td><td>Ctrl + Space</td><td>基本代码提示</td></tr><tr><td>Ctrl + Shift + Space</td><td>Ctrl + Shift + Space</td><td>智能代码提示</td></tr><tr><td>Shift, Shift</td><td>Shift, Shift</td><td>全局查找</td></tr><tr><td>Alt + Enter</td><td>Option + Enter</td><td>代码错误解决方案</td></tr><tr><td>Alt + Insert</td><td>Command + N 或 Ctrl + Enter</td><td>自动生成Bean方法</td></tr><tr><td>Ctrl + P</td><td>Command + P</td><td>在调用方法时，将光标定位在方法的括号中，提示方法的参数列表</td></tr><tr><td>Shift + F6</td><td>Shift + F6</td><td>重命名，适用于：在文件列表中对文件重命名，在文件内部对类名、属性名、方法名等重命名</td></tr></tbody></table><h3 id="1-3-常规"><a href="#1-3-常规" class="headerlink" title="1.3. 常规"></a>1.3. 常规</h3><table><thead><tr><th>Windows / Linux</th><th>Mac OS</th><th>说明</th></tr></thead><tbody><tr><td>Ctrl + Shift + A</td><td>Command + Shift + A</td><td>查找命令（IDE中可执行的命令，例如运行、调试、重命名等）</td></tr></tbody></table><h3 id="1-4-查找与替换"><a href="#1-4-查找与替换" class="headerlink" title="1.4. 查找与替换"></a>1.4. 查找与替换</h3><table><thead><tr><th>Windows / Linux</th><th>Mac OS</th><th>说明</th></tr></thead><tbody><tr><td>Shift, Shift</td><td>Shift, Shift</td><td>全局查找</td></tr><tr><td>Ctrl + F</td><td>Command + F</td><td>在当前源代码中查找</td></tr><tr><td>Ctrl + R</td><td>Command + R</td><td>在当前源代码中替换</td></tr><tr><td>Ctrl + Shift + F</td><td>Command + Shift + F</td><td>在指定路径（例如整个项目）中查找</td></tr><tr><td>Ctrl + Shift + R</td><td>Command + Shift + R</td><td>在指定路径（例如整个项目）中替换</td></tr></tbody></table><h3 id="1-5-代码编辑"><a href="#1-5-代码编辑" class="headerlink" title="1.5. 代码编辑"></a>1.5. 代码编辑</h3><table><thead><tr><th>Windows / Linux</th><th>Mac OS</th><th>说明</th></tr></thead><tbody><tr><td>[!] Ctrl + Space</td><td>Ctrl + Space</td><td>基本代码提示</td></tr><tr><td>Ctrl + Shift + Space</td><td>Ctrl + Shift + Space</td><td>智能代码提示</td></tr><tr><td>Ctrl + P</td><td>Command + P</td><td>在调用方法时，将光标定位在方法的括号中，提示方法的参数列表</td></tr><tr><td>Alt + Insert</td><td>Command + N 或 Ctrl + Enter</td><td>自动生成Bean方法</td></tr><tr><td>Ctrl + O</td><td>Ctrl + O</td><td>重写方法</td></tr><tr><td>Ctrl + Alt + T</td><td>Command + Option +  T</td><td>使用if/try…catch等代码块包裹当前选中代码</td></tr><tr><td>Ctrl + /</td><td>Command + /</td><td>添加/移除行注释</td></tr><tr><td>Ctrl + Alt + L</td><td>Command + Option + L</td><td>格式化源代码</td></tr><tr><td>Ctrl + Alt + O</td><td>[!] Ctrl + Option + O</td><td>整理import语句</td></tr><tr><td>Ctrl + D</td><td>Command + D</td><td>向下复制代码行</td></tr><tr><td>Ctrl + Y</td><td>Command + Delete</td><td>删除代码行</td></tr><tr><td>Shift + Enter</td><td>Shift + Enter</td><td>新增下一行代码，并将光标定位到下一行代码</td></tr><tr><td>Ctrl + Enter</td><td>Command + Enter</td><td>新增下一行代码，光标在原有位置不变</td></tr><tr><td>Ctrl + +/-</td><td>Command + +/-</td><td>展开或收起类的某个成员，例如方法、内部类等</td></tr><tr><td>Ctrl + Shift + +/-</td><td>Command + Shift + +/-</td><td>展开或收起当前类的所有成员</td></tr><tr><td></td><td>Option + Shift + 上/下</td><td>向上/下移动代码</td></tr><tr><td></td><td>Command + Option + V</td><td>将光标所在位置的常量声明为局部变量</td></tr><tr><td>Ctrl + Shift + V</td><td>Command + Shift + V</td><td>从最近复制过的多项中选择某项来粘贴</td></tr></tbody></table><blockquote><p>也有很多开发者使用<code>Ctrl</code> + <code>X</code>作为<strong>删除代码行</strong>的快捷键，其本质是<strong>剪切</strong>了代码，当然，只要不粘贴，其效果也是相同的。</p></blockquote><h3 id="1-6-管理与导航"><a href="#1-6-管理与导航" class="headerlink" title="1.6. 管理与导航"></a>1.6. 管理与导航</h3><table><thead><tr><th>Windows</th><th>Mac OS</th><th>说明</th></tr></thead><tbody><tr><td>Shift + F6</td><td>Shift + F6</td><td>重命名，适用于：在文件列表中对文件重命名，在文件内部对类名、属性名、方法名等重命名</td></tr><tr><td></td><td>Shift + 单击</td><td>在选项卡处单击以关闭文件</td></tr><tr><td>Ctrl  + F12</td><td>Command + F12</td><td>显示当前文档结构</td></tr><tr><td>Ctrl + U</td><td>Command + U</td><td>打开父类方法，打开父类，需先装光标定位到类名，不适用于打开Object类</td></tr><tr><td>F4 / Ctrl + Enter</td><td>Command + 下 / Ctrl + 单击</td><td>打开光标所在位置的类、属性、方法的声明</td></tr></tbody></table><h2 id="2-快捷输入"><a href="#2-快捷输入" class="headerlink" title="2. 快捷输入"></a>2. 快捷输入</h2><h3 id="2-1-操作方式"><a href="#2-1-操作方式" class="headerlink" title="2.1. 操作方式"></a>2.1. 操作方式</h3><p>可以通过快捷输入简单的内容后按下Enter键，快速完成特定的代码内容，这些内容可以在设置的Editor &gt; Live Templates中查看或调整。</p><h3 id="2-2-常规"><a href="#2-2-常规" class="headerlink" title="2.2. 常规"></a>2.2. 常规</h3><table><thead><tr><th>输入内容</th><th>等效代码</th></tr></thead><tbody><tr><td><code>psvm</code></td><td><code>public static void main(String[] args) {}</code></td></tr><tr><td><code>sout</code></td><td><code>System.out.println();</code></td></tr><tr><td><code>serr</code></td><td><code>System.err.println();</code></td></tr><tr><td><code>soutm</code></td><td><code>System.out.println(&quot;类名.方法名&quot;);</code></td></tr><tr><td><code>soutp</code></td><td><code>System.out.println(&quot;参数1 = [值1], 参数2 = [值2], ... , 参数N = [值N]&quot;);</code></td></tr><tr><td><code>soutv</code></td><td><code>System.out.println(&quot;参数名 = 值&quot;);</code></td></tr></tbody></table><h3 id="2-3-声明静态常量"><a href="#2-3-声明静态常量" class="headerlink" title="2.3. 声明静态常量"></a>2.3. 声明静态常量</h3><table><thead><tr><th>输入内容</th><th>等效代码</th></tr></thead><tbody><tr><td><code>psf</code></td><td><code>public static final</code></td></tr><tr><td><code>prsf</code></td><td><code>private static final</code></td></tr><tr><td><code>psfi</code></td><td><code>public static final int</code></td></tr><tr><td><code>psfs</code></td><td><code>public static final String</code></td></tr></tbody></table><h3 id="2-4-判断"><a href="#2-4-判断" class="headerlink" title="2.4. 判断"></a>2.4. 判断</h3><table><thead><tr><th>输入内容</th><th>等效代码</th></tr></thead><tbody><tr><td><code>ifn</code></td><td><code>if (变量 == null) {}</code></td></tr><tr><td><code>inn</code></td><td><code>if (变量 != null) {}</code></td></tr><tr><td><code>inst</code></td><td><code>if (变量 instanceof 类) {}</code></td></tr></tbody></table><h3 id="2-5-循环与遍历"><a href="#2-5-循环与遍历" class="headerlink" title="2.5. 循环与遍历"></a>2.5. 循环与遍历</h3><table><thead><tr><th>输入内容</th><th>等效代码</th></tr></thead><tbody><tr><td><code>fori</code></td><td><code>for (int 循环变量 = 0; 循环变量 &lt; ; i++) {}</code></td></tr><tr><td><code>itar</code></td><td><code>for (int 循环变量 = 0; 循环变量 &lt; 数组.length(); i++) { 类型 数组元素变量名 = 数组[i]}</code></td></tr><tr><td><code>iter</code></td><td><code>for (元素类型 变量名 : 被遍历对象) {}</code></td></tr><tr><td><code>itli</code></td><td><code>for (int 循环变量 = 0; 循环变量 &lt; 集合.size(); i++) { 类型 集合元素变量名 = 集合.get(循环变量); }</code></td></tr></tbody></table><h2 id="3-快捷输入–高级"><a href="#3-快捷输入–高级" class="headerlink" title="3. 快捷输入–高级"></a>3. 快捷输入–高级</h2><h3 id="3-1-遍历数组或集合对象"><a href="#3-1-遍历数组或集合对象" class="headerlink" title="3.1. 遍历数组或集合对象"></a>3.1. 遍历数组或集合对象</h3><p>假设存在名为<code>numbers</code>的<code>int</code>数组或集合，输入<code>numbers.for</code>即可生成增强for循环代码，格式如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> number : numbers) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="3-2-为值声明变量"><a href="#3-2-为值声明变量" class="headerlink" title="3.2. 为值声明变量"></a>3.2. 为值声明变量</h3><p>假设需要声明<code>int</code>类型的变量，其值为<code>1</code>，输入<code>1.var</code>即可生成对应的声明语句，格式如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br></pre></td></tr></table></figure><p>整型数字默认生成的变量名是<code>i</code>，代码生成后，可以自行调整。</p><p>同理，假设需要声明<code>String</code>类型的变量，其值为<code>&quot;Java&quot;</code>，输入<code>&quot;Java&quot;.var</code>即可，格式如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String java = <span class="string">"Java"</span>;</span><br></pre></td></tr></table></figure><p>字符串类型默认生成的变量名有多种情况，例如字符串内容是简单字母时，默认变量名就是字母，如果字母首字母是大写的，也会自动使用首字母小写作为默认变量名，字符串类型是汉字时，默认变量名就是汉字，字符串中包含不允许组成变量名的字符时，会使用<code>s</code>或<code>s1</code>、<code>s2</code>等作为默认变量名，当然，在代码生成后，都可以自行调整。</p><p>其它数据类型的值也可以使用同样的方法声明出变量，例如输入<code>new Date().var</code>时，就可以生成：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date date = <span class="keyword">new</span> Date();</span><br></pre></td></tr></table></figure><h3 id="3-3-判断对象是否为空"><a href="#3-3-判断对象是否为空" class="headerlink" title="3.3. 判断对象是否为空"></a>3.3. 判断对象是否为空</h3><p>假设存在名为<code>x</code>的变量，需要判断是否为空，输入<code>x.null</code>然后在提示菜单中选择<code>null</code>一栏回车，即可生成：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (x == <span class="keyword">null</span>) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如果需要判断是否非空，则输入<code>x.no</code>后选择<code>notnull</code>一栏并回车，即可生成：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (x != <span class="keyword">null</span>) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><p>未完，某天再续……</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>博客项目</title>
-      <link href="/2020/06/29/%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE/"/>
-      <url>/2020/06/29/%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE/</url>
-      
-        <content type="html"><![CDATA[<h1 id="博客项目"><a href="#博客项目" class="headerlink" title="博客项目"></a>博客项目</h1><h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><ol><li><p>Nginx反向代理、动静分离</p></li><li><p>部署在服务器上并添加SSL证书</p></li><li><p>使用手机号登录注册</p></li><li><p>使用QQ号登录注册</p></li><li><p>发布博客支持emoji表情包</p></li><li><p>支持发送图片（仅单张）</p></li><li><p>发布的文字支持MarkDown语法</p></li><li><p>发送的图片支持点击放大预览</p></li><li><p>实时获取微博热搜话题显示在主页</p></li><li><p>获取用户是用什么设备发送的博客，例如android，iPhone</p></li><li><p>根据设置的出生日期计算年龄</p></li><li><p>点赞功能</p></li><li><p>搜索功能</p></li><li><p>置顶功能</p></li><li><p>更换头像</p></li></ol><h2 id="技术框架"><a href="#技术框架" class="headerlink" title="技术框架"></a>技术框架</h2><p>SpringBoot  核心框架  </p><p>Appache Shiro  安全框架  </p><p>Mybatis  ORM框架  </p><p>Redis  缓存数据库</p><p>Nginx web服务器</p><p>BootStrap 前端框架</p><h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a><a href="https://blog.igali.xyz" target="_blank" rel="noopener">项目地址</a></h2>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>redis命令</title>
-      <link href="/2020/06/24/redis%E5%91%BD%E4%BB%A4/"/>
-      <url>/2020/06/24/redis%E5%91%BD%E4%BB%A4/</url>
-      
-        <content type="html"><![CDATA[<p><strong>开启redis命令</strong></p><p>systemctl start pedis.service</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>linux防火墙常用命令</title>
-      <link href="/2020/06/24/linux%E9%98%B2%E7%81%AB%E5%A2%99%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-      <url>/2020/06/24/linux%E9%98%B2%E7%81%AB%E5%A2%99%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      
-        <content type="html"><![CDATA[<h5 id="开启防火墙端口"><a href="#开启防火墙端口" class="headerlink" title="开启防火墙端口"></a>开启防火墙端口</h5><p>​    firewall-cmd –zone=public –add-port=80/tcp –permanent</p><h5 id="重启防火墙"><a href="#重启防火墙" class="headerlink" title="重启防火墙"></a>重启防火墙</h5><p>systemctl restart firewalld.service</p><h5 id="查看已经开放的端口"><a href="#查看已经开放的端口" class="headerlink" title="查看已经开放的端口"></a><strong>查看已经开放的端口</strong></h5><p>firewall-cmd –list-ports</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>IntellijIDEA快捷使用</title>
+    <url>/2020/07/02/IntellijIDEA%E5%BF%AB%E6%8D%B7%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Intellij-IDEA快捷使用"><a href="#Intellij-IDEA快捷使用" class="headerlink" title="Intellij IDEA快捷使用"></a>Intellij IDEA快捷使用</h1><h2 id="1-快捷键"><a href="#1-快捷键" class="headerlink" title="1. 快捷键"></a>1. 快捷键</h2><h3 id="1-1-按键说明"><a href="#1-1-按键说明" class="headerlink" title="1.1. 按键说明"></a>1.1. 按键说明</h3><table>
+<thead>
+<tr>
+<th>按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>需要同时按下加号左右两侧的键</td>
+</tr>
+<tr>
+<td>,</td>
+<td>按下逗号左侧的键后，松开，然后按下逗号右侧的键</td>
+</tr>
+<tr>
+<td>Ctrl</td>
+<td>控制键，键盘上标记了<code>Ctrl</code>的键，在Mac键盘上标记为<code>control</code></td>
+</tr>
+<tr>
+<td>Shift</td>
+<td>上档键，键盘上标记了<code>Shift</code>的键</td>
+</tr>
+<tr>
+<td>Alt</td>
+<td>切换键，键盘上标记了<code>Alt</code>的键，在Mac键盘上与<code>Option</code>是同一个键</td>
+</tr>
+<tr>
+<td>Command</td>
+<td>命令键，<strong>Mac键盘独有</strong>，标记了<code>Command</code>的键</td>
+</tr>
+<tr>
+<td>Enter</td>
+<td>回车键，键盘上标记了<code>Enter</code>的键，在Mac键盘上与<code>return</code>是同一个键</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>空格键，键盘上最下方、最大的按键</td>
+</tr>
+<tr>
+<td>Up / Down</td>
+<td>方向上/方向下，通常在键盘上标记了向上/向下的箭头</td>
+</tr>
+</tbody></table>
+<p>某些快捷键可能与操作系统或其它软件的全局快捷键是冲突的，则按下会无效或执行其它命令，可以在Intellij IDEA的设置的<strong>Keymap</strong>中修改为其它按键。</p>
+<p>以下快捷键是Intellij IDEA的默认风格快捷键，如果改成了Eclipse风格或其它风格，请参考所更改的设置。</p>
+<p>标记了<code>[!]</code>是可能存在冲突的快捷键。</p>
+<p>全部快捷键可在Intellij IDEA的设置的<strong>Keymap</strong>中查看，或者查看官方文档：<a href="https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf?_ga=2.5349558.422550521.1580708138-1891300040.1568641704" target="_blank" rel="noopener">https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf?_ga=2.5349558.422550521.1580708138-1891300040.1568641704</a></p>
+<p>在各种编辑软件中都会使用到的快捷键可能不会被列举到以下各表中，例如<code>Ctrl</code> + <code>C</code>表示<strong>复制</strong>，在各种编辑软件中都是这样设计的，就不重复列举了。</p>
+<h3 id="1-2-推荐快捷键"><a href="#1-2-推荐快捷键" class="headerlink" title="1.2. 推荐快捷键"></a>1.2. 推荐快捷键</h3><table>
+<thead>
+<tr>
+<th>Windows / Linux</th>
+<th>Mac OS</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>[!]</strong> Ctrl + Space</td>
+<td>Ctrl + Space</td>
+<td>基本代码提示</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Space</td>
+<td>Ctrl + Shift + Space</td>
+<td>智能代码提示</td>
+</tr>
+<tr>
+<td>Shift, Shift</td>
+<td>Shift, Shift</td>
+<td>全局查找</td>
+</tr>
+<tr>
+<td>Alt + Enter</td>
+<td>Option + Enter</td>
+<td>代码错误解决方案</td>
+</tr>
+<tr>
+<td>Alt + Insert</td>
+<td>Command + N 或 Ctrl + Enter</td>
+<td>自动生成Bean方法</td>
+</tr>
+<tr>
+<td>Ctrl + P</td>
+<td>Command + P</td>
+<td>在调用方法时，将光标定位在方法的括号中，提示方法的参数列表</td>
+</tr>
+<tr>
+<td>Shift + F6</td>
+<td>Shift + F6</td>
+<td>重命名，适用于：在文件列表中对文件重命名，在文件内部对类名、属性名、方法名等重命名</td>
+</tr>
+</tbody></table>
+<h3 id="1-3-常规"><a href="#1-3-常规" class="headerlink" title="1.3. 常规"></a>1.3. 常规</h3><table>
+<thead>
+<tr>
+<th>Windows / Linux</th>
+<th>Mac OS</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ctrl + Shift + A</td>
+<td>Command + Shift + A</td>
+<td>查找命令（IDE中可执行的命令，例如运行、调试、重命名等）</td>
+</tr>
+</tbody></table>
+<h3 id="1-4-查找与替换"><a href="#1-4-查找与替换" class="headerlink" title="1.4. 查找与替换"></a>1.4. 查找与替换</h3><table>
+<thead>
+<tr>
+<th>Windows / Linux</th>
+<th>Mac OS</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Shift, Shift</td>
+<td>Shift, Shift</td>
+<td>全局查找</td>
+</tr>
+<tr>
+<td>Ctrl + F</td>
+<td>Command + F</td>
+<td>在当前源代码中查找</td>
+</tr>
+<tr>
+<td>Ctrl + R</td>
+<td>Command + R</td>
+<td>在当前源代码中替换</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + F</td>
+<td>Command + Shift + F</td>
+<td>在指定路径（例如整个项目）中查找</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + R</td>
+<td>Command + Shift + R</td>
+<td>在指定路径（例如整个项目）中替换</td>
+</tr>
+</tbody></table>
+<h3 id="1-5-代码编辑"><a href="#1-5-代码编辑" class="headerlink" title="1.5. 代码编辑"></a>1.5. 代码编辑</h3><table>
+<thead>
+<tr>
+<th>Windows / Linux</th>
+<th>Mac OS</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[!] Ctrl + Space</td>
+<td>Ctrl + Space</td>
+<td>基本代码提示</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + Space</td>
+<td>Ctrl + Shift + Space</td>
+<td>智能代码提示</td>
+</tr>
+<tr>
+<td>Ctrl + P</td>
+<td>Command + P</td>
+<td>在调用方法时，将光标定位在方法的括号中，提示方法的参数列表</td>
+</tr>
+<tr>
+<td>Alt + Insert</td>
+<td>Command + N 或 Ctrl + Enter</td>
+<td>自动生成Bean方法</td>
+</tr>
+<tr>
+<td>Ctrl + O</td>
+<td>Ctrl + O</td>
+<td>重写方法</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + T</td>
+<td>Command + Option +  T</td>
+<td>使用if/try…catch等代码块包裹当前选中代码</td>
+</tr>
+<tr>
+<td>Ctrl + /</td>
+<td>Command + /</td>
+<td>添加/移除行注释</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + L</td>
+<td>Command + Option + L</td>
+<td>格式化源代码</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + O</td>
+<td>[!] Ctrl + Option + O</td>
+<td>整理import语句</td>
+</tr>
+<tr>
+<td>Ctrl + D</td>
+<td>Command + D</td>
+<td>向下复制代码行</td>
+</tr>
+<tr>
+<td>Ctrl + Y</td>
+<td>Command + Delete</td>
+<td>删除代码行</td>
+</tr>
+<tr>
+<td>Shift + Enter</td>
+<td>Shift + Enter</td>
+<td>新增下一行代码，并将光标定位到下一行代码</td>
+</tr>
+<tr>
+<td>Ctrl + Enter</td>
+<td>Command + Enter</td>
+<td>新增下一行代码，光标在原有位置不变</td>
+</tr>
+<tr>
+<td>Ctrl + +/-</td>
+<td>Command + +/-</td>
+<td>展开或收起类的某个成员，例如方法、内部类等</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + +/-</td>
+<td>Command + Shift + +/-</td>
+<td>展开或收起当前类的所有成员</td>
+</tr>
+<tr>
+<td></td>
+<td>Option + Shift + 上/下</td>
+<td>向上/下移动代码</td>
+</tr>
+<tr>
+<td></td>
+<td>Command + Option + V</td>
+<td>将光标所在位置的常量声明为局部变量</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + V</td>
+<td>Command + Shift + V</td>
+<td>从最近复制过的多项中选择某项来粘贴</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>也有很多开发者使用<code>Ctrl</code> + <code>X</code>作为<strong>删除代码行</strong>的快捷键，其本质是<strong>剪切</strong>了代码，当然，只要不粘贴，其效果也是相同的。</p>
+</blockquote>
+<h3 id="1-6-管理与导航"><a href="#1-6-管理与导航" class="headerlink" title="1.6. 管理与导航"></a>1.6. 管理与导航</h3><table>
+<thead>
+<tr>
+<th>Windows</th>
+<th>Mac OS</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Shift + F6</td>
+<td>Shift + F6</td>
+<td>重命名，适用于：在文件列表中对文件重命名，在文件内部对类名、属性名、方法名等重命名</td>
+</tr>
+<tr>
+<td></td>
+<td>Shift + 单击</td>
+<td>在选项卡处单击以关闭文件</td>
+</tr>
+<tr>
+<td>Ctrl  + F12</td>
+<td>Command + F12</td>
+<td>显示当前文档结构</td>
+</tr>
+<tr>
+<td>Ctrl + U</td>
+<td>Command + U</td>
+<td>打开父类方法，打开父类，需先装光标定位到类名，不适用于打开Object类</td>
+</tr>
+<tr>
+<td>F4 / Ctrl + Enter</td>
+<td>Command + 下 / Ctrl + 单击</td>
+<td>打开光标所在位置的类、属性、方法的声明</td>
+</tr>
+</tbody></table>
+<h2 id="2-快捷输入"><a href="#2-快捷输入" class="headerlink" title="2. 快捷输入"></a>2. 快捷输入</h2><h3 id="2-1-操作方式"><a href="#2-1-操作方式" class="headerlink" title="2.1. 操作方式"></a>2.1. 操作方式</h3><p>可以通过快捷输入简单的内容后按下Enter键，快速完成特定的代码内容，这些内容可以在设置的Editor &gt; Live Templates中查看或调整。</p>
+<h3 id="2-2-常规"><a href="#2-2-常规" class="headerlink" title="2.2. 常规"></a>2.2. 常规</h3><table>
+<thead>
+<tr>
+<th>输入内容</th>
+<th>等效代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>psvm</code></td>
+<td><code>public static void main(String[] args) {}</code></td>
+</tr>
+<tr>
+<td><code>sout</code></td>
+<td><code>System.out.println();</code></td>
+</tr>
+<tr>
+<td><code>serr</code></td>
+<td><code>System.err.println();</code></td>
+</tr>
+<tr>
+<td><code>soutm</code></td>
+<td><code>System.out.println(&quot;类名.方法名&quot;);</code></td>
+</tr>
+<tr>
+<td><code>soutp</code></td>
+<td><code>System.out.println(&quot;参数1 = [值1], 参数2 = [值2], ... , 参数N = [值N]&quot;);</code></td>
+</tr>
+<tr>
+<td><code>soutv</code></td>
+<td><code>System.out.println(&quot;参数名 = 值&quot;);</code></td>
+</tr>
+</tbody></table>
+<h3 id="2-3-声明静态常量"><a href="#2-3-声明静态常量" class="headerlink" title="2.3. 声明静态常量"></a>2.3. 声明静态常量</h3><table>
+<thead>
+<tr>
+<th>输入内容</th>
+<th>等效代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>psf</code></td>
+<td><code>public static final</code></td>
+</tr>
+<tr>
+<td><code>prsf</code></td>
+<td><code>private static final</code></td>
+</tr>
+<tr>
+<td><code>psfi</code></td>
+<td><code>public static final int</code></td>
+</tr>
+<tr>
+<td><code>psfs</code></td>
+<td><code>public static final String</code></td>
+</tr>
+</tbody></table>
+<h3 id="2-4-判断"><a href="#2-4-判断" class="headerlink" title="2.4. 判断"></a>2.4. 判断</h3><table>
+<thead>
+<tr>
+<th>输入内容</th>
+<th>等效代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ifn</code></td>
+<td><code>if (变量 == null) {}</code></td>
+</tr>
+<tr>
+<td><code>inn</code></td>
+<td><code>if (变量 != null) {}</code></td>
+</tr>
+<tr>
+<td><code>inst</code></td>
+<td><code>if (变量 instanceof 类) {}</code></td>
+</tr>
+</tbody></table>
+<h3 id="2-5-循环与遍历"><a href="#2-5-循环与遍历" class="headerlink" title="2.5. 循环与遍历"></a>2.5. 循环与遍历</h3><table>
+<thead>
+<tr>
+<th>输入内容</th>
+<th>等效代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>fori</code></td>
+<td><code>for (int 循环变量 = 0; 循环变量 &lt; ; i++) {}</code></td>
+</tr>
+<tr>
+<td><code>itar</code></td>
+<td><code>for (int 循环变量 = 0; 循环变量 &lt; 数组.length(); i++) { 类型 数组元素变量名 = 数组[i]}</code></td>
+</tr>
+<tr>
+<td><code>iter</code></td>
+<td><code>for (元素类型 变量名 : 被遍历对象) {}</code></td>
+</tr>
+<tr>
+<td><code>itli</code></td>
+<td><code>for (int 循环变量 = 0; 循环变量 &lt; 集合.size(); i++) { 类型 集合元素变量名 = 集合.get(循环变量); }</code></td>
+</tr>
+</tbody></table>
+<h2 id="3-快捷输入–高级"><a href="#3-快捷输入–高级" class="headerlink" title="3. 快捷输入–高级"></a>3. 快捷输入–高级</h2><h3 id="3-1-遍历数组或集合对象"><a href="#3-1-遍历数组或集合对象" class="headerlink" title="3.1. 遍历数组或集合对象"></a>3.1. 遍历数组或集合对象</h3><p>假设存在名为<code>numbers</code>的<code>int</code>数组或集合，输入<code>numbers.for</code>即可生成增强for循环代码，格式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> number : numbers) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-为值声明变量"><a href="#3-2-为值声明变量" class="headerlink" title="3.2. 为值声明变量"></a>3.2. 为值声明变量</h3><p>假设需要声明<code>int</code>类型的变量，其值为<code>1</code>，输入<code>1.var</code>即可生成对应的声明语句，格式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>整型数字默认生成的变量名是<code>i</code>，代码生成后，可以自行调整。</p>
+<p>同理，假设需要声明<code>String</code>类型的变量，其值为<code>&quot;Java&quot;</code>，输入<code>&quot;Java&quot;.var</code>即可，格式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String java = <span class="string">"Java"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>字符串类型默认生成的变量名有多种情况，例如字符串内容是简单字母时，默认变量名就是字母，如果字母首字母是大写的，也会自动使用首字母小写作为默认变量名，字符串类型是汉字时，默认变量名就是汉字，字符串中包含不允许组成变量名的字符时，会使用<code>s</code>或<code>s1</code>、<code>s2</code>等作为默认变量名，当然，在代码生成后，都可以自行调整。</p>
+<p>其它数据类型的值也可以使用同样的方法声明出变量，例如输入<code>new Date().var</code>时，就可以生成：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Date date = <span class="keyword">new</span> Date();</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-判断对象是否为空"><a href="#3-3-判断对象是否为空" class="headerlink" title="3.3. 判断对象是否为空"></a>3.3. 判断对象是否为空</h3><p>假设存在名为<code>x</code>的变量，需要判断是否为空，输入<code>x.null</code>然后在提示菜单中选择<code>null</code>一栏回车，即可生成：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (x == <span class="keyword">null</span>) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果需要判断是否非空，则输入<code>x.no</code>后选择<code>notnull</code>一栏并回车，即可生成：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (x != <span class="keyword">null</span>) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>未完，某天再续……</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Tomcat中配置去掉项目名</title>
+    <url>/2020/07/06/tomcat%E5%8E%BB%E6%8E%89%E9%A1%B9%E7%9B%AE%E5%90%8D/</url>
+    <content><![CDATA[<p>负载均衡中war放在tomcat中时，访问会带有包名。</p>
+<h5 id="打开tomcat-conf-server-xml-把"><a href="#打开tomcat-conf-server-xml-把" class="headerlink" title="打开tomcat/conf/server.xml,把"></a>打开tomcat/conf/server.xml,把</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;Context path&#x3D;&quot;&#x2F;&quot; docBase&#x3D;&quot;&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;tomcat-8102&#x2F;webapps&#x2F;blog&quot; reloadable&#x3D;&quot;true&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>添加到<code>&lt;Host&gt;&lt;/Host&gt;</code>标签中。</p>
+]]></content>
+      <tags>
+        <tag>tomcat</tag>
+        <tag>nginx</tag>
+        <tag>负载均衡</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客项目</title>
+    <url>/2020/06/29/%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="博客项目"><a href="#博客项目" class="headerlink" title="博客项目"></a>博客项目</h1><h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><ol>
+<li><p>Nginx反向代理、动静分离</p>
+</li>
+<li><p>部署在服务器上并添加SSL证书</p>
+</li>
+<li><p>使用手机号登录注册</p>
+</li>
+<li><p>使用QQ号登录注册</p>
+</li>
+<li><p>发布博客支持emoji表情包</p>
+</li>
+<li><p>支持发送图片（仅单张）</p>
+</li>
+<li><p>发布的文字支持MarkDown语法</p>
+</li>
+<li><p>发送的图片支持点击放大预览</p>
+</li>
+<li><p>实时获取微博热搜话题显示在主页</p>
+</li>
+<li><p>获取用户是用什么设备发送的博客，例如android，iPhone</p>
+</li>
+<li><p>根据设置的出生日期计算年龄</p>
+</li>
+<li><p>点赞功能</p>
+</li>
+<li><p>搜索功能</p>
+</li>
+<li><p>置顶功能</p>
+</li>
+<li><p>更换头像</p>
+</li>
+</ol>
+<h2 id="技术框架"><a href="#技术框架" class="headerlink" title="技术框架"></a>技术框架</h2><p>SpringBoot  核心框架  </p>
+<p>Appache Shiro  安全框架  </p>
+<p>Mybatis  ORM框架  </p>
+<p>Redis  缓存数据库</p>
+<p>Nginx web服务器</p>
+<p>BootStrap 前端框架</p>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a><a href="https://blog.igali.xyz" target="_blank" rel="noopener">项目地址</a></h2>]]></content>
+  </entry>
+  <entry>
+    <title>redis命令</title>
+    <url>/2020/06/24/redis%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p><strong>开启redis命令</strong></p>
+<p>systemctl start pedis.service</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>linux防火墙常用命令</title>
+    <url>/2020/06/24/linux%E9%98%B2%E7%81%AB%E5%A2%99%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h5 id="开启防火墙端口"><a href="#开启防火墙端口" class="headerlink" title="开启防火墙端口"></a>开启防火墙端口</h5><p>​    firewall-cmd –zone=public –add-port=80/tcp –permanent</p>
+<h5 id="重启防火墙"><a href="#重启防火墙" class="headerlink" title="重启防火墙"></a>重启防火墙</h5><p>systemctl restart firewalld.service</p>
+<h5 id="查看已经开放的端口"><a href="#查看已经开放的端口" class="headerlink" title="查看已经开放的端口"></a><strong>查看已经开放的端口</strong></h5><p>firewall-cmd –list-ports</p>
+]]></content>
+  </entry>
 </search>
