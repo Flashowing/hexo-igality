@@ -1208,13 +1208,11 @@
   <entry>
     <title>面试题笔记</title>
     <url>/2020/04/08/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><p><strong>JVM**</strong>的工作原理**</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JVM是JRE的一部分，Java语言最重要的特点就是跨平台运行。使用JVM就是为了支持与操作系统无关，实现跨平台。(怎么跨平台的：jvm它是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。JVM有自己完善的硬件架构，如处理器、堆栈、寄存器等，还具有相应的指令系统)</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h3 id="JVM的工作原理"><a href="#JVM的工作原理" class="headerlink" title="JVM的工作原理"></a>JVM的工作原理</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JVM是JRE的一部分，Java语言最重要的特点就是跨平台运行。使用JVM就是为了支持与操作系统无关，实现跨平台。(怎么跨平台的：jvm它是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。JVM有自己完善的硬件架构，如处理器、堆栈、寄存器等，还具有相应的指令系统)</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">一、JVM内存分为堆、方法区、虚拟机栈、本地方法栈、程序计数器五个部分。</span><br><span class="line"></span><br><span class="line">二、堆和方法区是线程共享的，虚拟机栈、本地方法栈和程序计数器是线程隔离的。</span><br><span class="line"></span><br><span class="line">三、1.堆主要是存放对象实例的也包括数组，是垃圾管理的主要作用区。</span><br></pre></td></tr></table></figure>
 
-<p><strong>JVM的生命周期</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">（1）JVM实例的诞生：当启动一个Java程序时，一个JVM实例就产生了，任何一个拥有public static void main(String[] args)函数的class都可以作为JVM实例运行的起点。 </span><br><span class="line">（2）JVM实例的运行 main()作为该程序初始线程的起点，任何其他线程均由该线程启动。JVM内部有两种线程：守护线程和非守护线程，main()属于非守护线程，守护线程通常由JVM自己使用，java程序也可以标明自己创建的线程是守护线程。 </span><br><span class="line">（3）JVM实例的消亡：当程序中的所有非守护线程都终止时，JVM才退出；若安全管理器允许，程序也可以使用Runtime类或者System.exit()来退出。</span><br></pre></td></tr></table></figure>
+<h3 id="JVM的生命周期"><a href="#JVM的生命周期" class="headerlink" title="JVM的生命周期"></a><strong>JVM的生命周期</strong></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">（1）JVM实例的诞生：当启动一个Java程序时，一个JVM实例就产生了，任何一个拥有public static void main(String[] args)函数的class都可以作为JVM实例运行的起点。 </span><br><span class="line">（2）JVM实例的运行 main()作为该程序初始线程的起点，任何其他线程均由该线程启动。JVM内部有两种线程：守护线程和非守护线程，main()属于非守护线程，守护线程通常由JVM自己使用，java程序也可以标明自己创建的线程是守护线程。 </span><br><span class="line">（3）JVM实例的消亡：当程序中的所有非守护线程都终止时，JVM才退出；若安全管理器允许，程序也可以使用Runtime类或者System.exit()来退出。</span><br></pre></td></tr></table></figure>
 
 
 
