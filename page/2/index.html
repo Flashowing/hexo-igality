@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>猪猪和二号线</title><meta name="description"><meta name="author" content="Flashowing"><meta name="copyright" content="Flashowing"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://www.igality.com/page/2/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="HSJEYp9WF2"/><meta property="og:type" content="website"><meta property="og:title" content="猪猪和二号线"><meta property="og:url" content="http://www.igality.com/page/2/"><meta property="og:site_name" content="猪猪和二号线"><meta property="og:description"><meta property="og:image" content="https://static.blog.igali.xyz/avatar/1594890948063-10371395229746955.jpeg"><meta property="article:published_time" content="2020-07-20T11:35:36.678Z"><meta property="article:modified_time" content="2020-07-20T11:35:36.678Z"><meta name="twitter:card" content="summary"><link rel="manifest" href="manifest.json"/><meta name="theme-color" content="#fff"/><meta name="msapplication-TileColor" content="#fff"/><link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png"/><link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#5bbad5"/><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c299b1a439c996632c8ca606466a03e2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"简","msgToSimplifiedChinese":"繁"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="baidu-site-verification" content="IUybuxqjRi" /><meta name="generator" content="Hexo 4.2.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://static.blog.igali.xyz/avatar/1594890948063-10371395229746955.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">11</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 拓展</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/reprint/"><i class="fa-fw fa fa-share-square"></i><span> 转载</span></a></li><li><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa fa-comments"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://static.blog.igali.xyz/backphotos/backImg1.jpeg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">猪猪和二号线</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 拓展</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/reprint/"><i class="fa-fw fa fa-share-square"></i><span> 转载</span></a></li><li><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa fa-comments"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">猪猪和二号线</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Flashowing" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:flashowingy@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/04/08_SPRINGMVC_DAY01/" title="SpringMVC01">SpringMVC01</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-04 20:30:36"><i class="far fa-calendar-alt"></i>2020-07-04</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%BE%BE%E5%86%85%E7%AC%94%E8%AE%B0/">达内笔记</a></span></div><div class="content">1. SpringMVC框架的作用MVC = Model（数据模型） + View（视图） + Controller（控制器）
+SpringMVC框架主要解决了接收请求与处理响应的问题，也可以认为是解决了V-C交互的问题，与M其实没有关系。
+在传统的Java EE的开发模式下，可能存在Servlet组件数量太多的问题，会导致项目的管理难度太大，且运行时，会有大量的Servlet对象长期占用内存的问题！
+另外，传统的Java EE开发模式下，数据的处理过程中代码量相对较大，而SpringMVC非常大极度的简化了开发量！
+2. SpringMVC HelloWorld2.1. 案例目标最终程序运行后，打开浏览器，输入http://localhost:8080/项目名/hello.do即可看到自定义输出的内容。
+2.2. 在Eclipse中添加Server打开Eclipse的Servers面板，添加Tomcat，当添加成功后，在Eclipse的项目列表中，会出现Servers项目，在需要使用Tomcat时，必须保证该项目是存在且打开的状态。
+2.3. 创建项目创建Maven Project， ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/04/08_SPRINGMVC_DAY02/" title="SpringMVC02">SpringMVC02</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-04 20:30:36"><i class="far fa-calendar-alt"></i>2020-07-04</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%BE%BE%E5%86%85%E7%AC%94%E8%AE%B0/">达内笔记</a></span></div><div class="content">1. 接收客户端提交的请求参数1.1. 使用HttpServletRequest接收请求参数在处理请求的方法的参数列表中，添加HttpServletRequest类型的参数，在处理请求的过程中，调用该参数对象的getParameter()方法即可获取请求参数；
+1.2. 将请求参数设计为方法的参数可以将客户端提交的请求参数直接声明为处理请求的方法的参数，并且，可以直接将参数声明为期望的数据类型，例如：
+// 【处理注册请求】
+@RequestMapping(&quot;handle_reg.do&quot;)
+@ResponseBody
+public String handleReg(String username, String password, Integer age, String phone, String email) {
+    System.out.println(&quot;UserController.handleReg()&quot;);
+
+    System.out.println(&quot;username=&quot; + username);
+     ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/03/07_SPRING_DAY03/" title="Spring03">Spring03</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-03 11:04:54"><i class="far fa-calendar-alt"></i>2020-07-03</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%BE%BE%E5%86%85%E7%AC%94%E8%AE%B0/">达内笔记</a></span></div><div class="content">1. 通过Environment读取.properties配置文件假设在src/main/resources下存在jdbc.properties文件，并且，在该文件中存在若干条配置信息，如果需要读取该文件中的配置信息，可以先创建某个类，在类中声明Environment接口类型的对象，通过自动装配的方式为该类型对象注入值：
+package cn.tedu.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
+
+@Component
+@PropertySource(&quot;classpath:jdbc.properties&quot;)
+public class JdbcConfig ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/02/IntellijIDEA%E5%BF%AB%E6%8D%B7%E4%BD%BF%E7%94%A8/" title="IntellijIDEA快捷使用">IntellijIDEA快捷使用</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack article-meta__icon sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><time class="post-meta__date" title="发表于 2020-07-02 19:25:29"><i class="far fa-calendar-alt"></i>2020-07-02</time></div><div class="content">Intellij IDEA快捷使用1. 快捷键1.1. 按键说明
+
+
+按键
+说明
+
+
+
++
+需要同时按下加号左右两侧的键
+
+
+,
+按下逗号左侧的键后，松开，然后按下逗号右侧的键
+
+
+Ctrl
+控制键，键盘上标记了Ctrl的键，在Mac键盘上标记为control
+
+
+Shift
+上档键，键盘上标记了Shift的键
+
+
+Alt
+切换键，键盘上标记了Alt的键，在Mac键盘上与Option是同一个键
+
+
+Command
+命令键，Mac键盘独有，标记了Command的键
+
+
+Enter
+回车键，键盘上标记了Enter的键，在Mac键盘上与return是同一个键
+
+
+Space
+空格键，键盘上最下方、最大的按键
+
+
+Up / Down
+方向上/方向下，通常在键盘上标记了向上/向下的箭头
+
+
+某些快捷键可能与操作系统或其它软件的全局快捷键是冲突的，则按下会无效或执行其它命令，可以在Intellij IDEA的设置的Keymap中修改为其它按键。
+以下快捷键是Intellij IDEA的默认风格快捷键，如果改成了Eclipse风格或其它风格，请参考所更改的设置。
+标记了[!]是可能存在冲突的快捷键。 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/01/07_SPRING_DAY02/" title="Spring02">Spring02</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-01 17:56:38"><i class="far fa-calendar-alt"></i>2020-07-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%BE%BE%E5%86%85%E7%AC%94%E8%AE%B0/">达内笔记</a></span></div><div class="content">1. 组件扫描首先，必须让Spring扫描组件所在的包，并且，组件类的声明之前必须添加@Component注解！
+其实，除了@Component注解以外，还可以使用以下注解实现同样的效果：
+
+@Controller:推荐添加在控制器类之前;
+@Service:推荐添加在业务类之前;
+@Repository:推荐添加在处理持久层的类之前.
+
+以上4个注解在Spring框架的作用领域中，效果是完全相同的，用法也完全相同，只是语义不同。
+在使用组件扫描时，还可以自定义某个类，作为配置类，在这个类的声明之前使用@ComponentScan注解来配置组件扫描的包：
+package cn.tedu.spring;
+
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan(&quot;cn.tedu.spring&quot;)
+public class SpringConfig {
+
+}
+后续,程序运行时,就需要加载这个配置类：
+AnnotationConfigApplicationContext ac ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/07/01/07_SPRING_DAY01/" title="Spring01">Spring01</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-07-01 09:57:16"><i class="far fa-calendar-alt"></i>2020-07-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%BE%BE%E5%86%85%E7%AC%94%E8%AE%B0/">达内笔记</a></span></div><div class="content">2. Spring框架的作用Spring框架的主要作用是创建对象和管理对象。
+创建对象：类似于User user = new User();
+管理对象：随时可以通过Spring框架获取对象，甚至Spring框架还能够帮我们为对象的属性进行赋值等。
+3. 通过Spring框架创建对象，并获取对象在Eclipse中创建Maven Project，在创建过程中勾上Create a simple project，Group Id填为cn.tedu，Artifact Id填为spring01。
+
+如果某个项目不会被其它项目所使用，只需要保证自身能独立运行，其实Group Id和Artifact Id的值是多少，并不重要。
+
+创建成功后，先在pom.xml中添加以上配置：
+&lt;properties&gt;
+    &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target& ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/06/29/%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%9B%AE/" title="博客项目">博客项目</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-29 15:33:07"><i class="far fa-calendar-alt"></i>2020-06-29</time></div><div class="content">博客项目实现功能
+Nginx反向代理、动静分离
+
+部署在服务器上并添加SSL证书
+
+使用手机号登录注册
+
+使用QQ号登录注册
+
+发布博客支持emoji表情包
+
+支持发送图片（仅单张）
+
+发布的文字支持MarkDown语法
+
+发送的图片支持点击放大预览
+
+实时获取微博热搜话题显示在主页
+
+获取用户是用什么设备发送的博客，例如android，iPhone
+
+根据设置的出生日期计算年龄
+
+点赞功能
+
+搜索功能
+
+置顶功能
+
+更换头像
+
+
+技术框架SpringBoot  核心框架  
+Appache Shiro  安全框架  
+Mybatis  ORM框架  
+Redis  缓存数据库
+Nginx web服务器
+BootStrap 前端框架
+项目地址</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/06/24/redis%E5%91%BD%E4%BB%A4/" title="redis命令">redis命令</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-24 17:50:01"><i class="far fa-calendar-alt"></i>2020-06-24</time></div><div class="content">开启redis命令
+systemctl start pedis.service
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/06/24/linux%E9%98%B2%E7%81%AB%E5%A2%99%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="linux防火墙常用命令">linux防火墙常用命令</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-24 15:12:10"><i class="far fa-calendar-alt"></i>2020-06-24</time></div><div class="content">开启防火墙端口​    firewall-cmd –zone=public –add-port=80/tcp –permanent
+重启防火墙systemctl restart firewalld.service
+查看已经开放的端口firewall-cmd –list-ports
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/04/08/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/" title="面试题笔记">面试题笔记</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-04-08 15:33:03"><i class="far fa-calendar-alt"></i>2020-04-08</time></div><div class="content">JVMJVM的工作原理JVM是JRE的一部分，Java语言最重要的特点就是跨平台运行。使用JVM就是为了支持与操作系统无关，实现跨平台。(怎么跨平台的：jvm它是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。JVM有自己完善的硬件架构，如处理器、堆栈、寄存器等，还具有相应的指令系统) 一、JVM内存分为堆、方法区、虚拟机栈、本地方法栈、程序计数器五个部分。
+
+二、堆和方法区是线程共享的，虚拟机栈、本地方法栈和程序计数器是线程隔离的。
+
+三、1.堆主要是存放对象实例的也包括数组，是垃圾管理的主要作用区。
+
+JVM的生命周期（1）JVM实例的诞生：当启动一个Java程序时，一个JVM实例就产生了，任何一个拥有public static void main(String[] args)函数的class都可以作为JVM实例运行的起点。 
+（2）JVM实例的运行 main()作为该程序初始线程的起点，任何其他线程均由该线程启动。JVM内部有两种线程：守护线程和非守护线程，main()属于非守护线程，守护线程通常由JVM自己使用，java程序也可以标明自己创建的线程是 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://static.blog.igali.xyz/avatar/1594890948063-10371395229746955.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Flashowing</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">20</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">11</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">2</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Flashowing" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:flashowingy@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2020/07/17/2020-07-17-Hexo%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2020/07/17/2020-07-17-Hexo%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="Hexo问题解决">Hexo问题解决</div><time class="aside-post_meta post-meta__date" title="发表于 2020-07-17 09:24:56">2020-07-17</time></div></a></div><div class="aside-recent-post"><a href="/2020/07/11/%E4%BD%BF%E7%94%A8Artitalk%E4%B8%BAhexo%E6%B7%BB%E5%8A%A0%E8%AF%B4%E8%AF%B4%E5%8A%9F%E8%83%BD/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2020/07/11/%E4%BD%BF%E7%94%A8Artitalk%E4%B8%BAhexo%E6%B7%BB%E5%8A%A0%E8%AF%B4%E8%AF%B4%E5%8A%9F%E8%83%BD/" title="使用Artitalk为hexo添加说说功能">使用Artitalk为hexo添加说说功能</div><time class="aside-post_meta post-meta__date" title="发表于 2020-07-11 17:50:08">2020-07-11</time></div></a></div><div class="aside-recent-post"><a href="/2020/07/10/09_MYBATIS_DAY03/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2020/07/10/09_MYBATIS_DAY03/" title="MyBatis03">MyBatis03</div><time class="aside-post_meta post-meta__date" title="发表于 2020-07-10 17:45:06">2020-07-10</time></div></a></div><div class="aside-recent-post"><a href="/2020/07/08/09_MYBATIS_DAY02/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2020/07/08/09_MYBATIS_DAY02/" title="MyBatis02">MyBatis02</div><time class="aside-post_meta post-meta__date" title="发表于 2020-07-08 20:18:07">2020-07-08</time></div></a></div><div class="aside-recent-post"><a href="/2020/07/08/09_MYBATIS_DAY01_PLUS/"><div class="aside-post-title no-aside-cover"><div class="aside-post_title" href="/2020/07/08/09_MYBATIS_DAY01_PLUS/" title="字符编码">字符编码</div><time class="aside-post_meta post-meta__date" title="发表于 2020-07-08 15:09:38">2020-07-08</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo/"><span class="card-category-list-name">Hexo</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BE%BE%E5%86%85%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">达内笔记</span><span class="card-category-list-count">10</span></a></li>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Artitalk/" style="font-size: 16px; color: #999">Artitalk</a> <a href="/tags/Exception/" style="font-size: 16px; color: #999">Exception</a> <a href="/tags/Hexo/" style="font-size: 16px; color: #999">Hexo</a> <a href="/tags/MyBatis/" style="font-size: 22px; color: #99a9bf">MyBatis</a> <a href="/tags/Spring/" style="font-size: 22px; color: #99a9bf">Spring</a> <a href="/tags/SpringMVC/" style="font-size: 22px; color: #99a9bf">SpringMVC</a> <a href="/tags/hexo/" style="font-size: 16px; color: #999">hexo</a> <a href="/tags/nginx/" style="font-size: 16px; color: #999">nginx</a> <a href="/tags/tomcat/" style="font-size: 16px; color: #999">tomcat</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" style="font-size: 16px; color: #999">字符编码</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 16px; color: #999">负载均衡</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">四月 2020</span><span class="card-archive-list-count">1</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">20</div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">35.9k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://static.blog.igali.xyz/backphotos/backImg1.jpeg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By Flashowing</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="icp"><a href="http://www.beian.miit.gov.cn"><span>渝ICP备20002043号-5</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect) { 
+  var typed = new Typed("#subtitle", {
+    strings: "亲人的爱与时光悠悠同在".split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: true,
+    backSpeed: 50
+  })
+} else {
+  document.getElementById("subtitle").innerHTML = '亲人的爱与时光悠悠同在'
+}</script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>
