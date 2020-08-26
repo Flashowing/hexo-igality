@@ -54,6 +54,33 @@
     
     
     <entry>
+      <title>AOP</title>
+      <link href="/2020/08/07/AOP/"/>
+      <url>/2020/08/07/AOP/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="Spring-AOP"><a href="#Spring-AOP" class="headerlink" title="Spring AOP"></a>Spring AOP</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>AOP，指面向切面编程(Aspect Oriented Programming)，是一种编程思想，在实际应用中是对OOP的有效补充。</p><p>在OOP中，模块化的核心单元是类，在AOP中，模块化的核心单元是切面(Aspect)，切面中封装了具体的代码。</p><h4 id="AOP有什么用？"><a href="#AOP有什么用？" class="headerlink" title="AOP有什么用？"></a>AOP有什么用？</h4><p>应用程序中的处理逻辑可以分为两类：核心关注点 和 横切关注点。</p><p>核心关注点指某项业务的核心处理逻辑。</p><p>横切关注点指那些会被多个业务重复调用，但是和具体业务关系不大的模块，例如日志模块，性能统计模块，事务管理模块，安全验证模块等。</p><p>AOP可以将横切关注点的内容封装在Aspect内部，并注入到所需的地方，有效实现核心关注点和横切关注点的解耦，提高了程序的可扩展性和可维护性，提高了开发效率。</p><p><img src= "/img/loading.gif" data-src="1.png" alt=""></p><h4 id="如何使用："><a href="#如何使用：" class="headerlink" title="如何使用："></a>如何使用：</h4><p>Spring的IOC为AOP提供了强大的支持，利用Spring，可以非常便捷的实现AOP编程：</p><ol start="0"><li><p>需要在项目中添加<code>aspectj-tools</code>和<code>aspectjweaver</code>的依赖：</p><dependency>  <groupId>aspectj</groupId>  <artifactId>aspectj-tools</artifactId>  <version>1.0.6</version></dependency><dependency>  <groupId>org.aspectj</groupId>  <artifactId>aspectjweaver</artifactId></dependency></li><li><p>需要开发一个切面类<code>cn.tedu.db.common.aop.TimerAspect</code>，在类上添加2个必要的注解<code>@Aspect</code>和<code>@Component</code>:</p><p>@Aspect<br>@Component<br>public class TimerAspect {</p><p>}</p></li></ol><ol start="2"><li>在类中添加切面方法：</li></ol><p>方法的参数列表中必须添加参数<code>ProceedingJoinPoint</code>，它代表了目标方法的句柄：</p><pre><code>@Around(&quot;execution(* cn.tedu.db.sys.service.impl.*.*(..))&quot;)public Object a(ProceedingJoinPoint pjp) throws Throwable {    // 记录开始时间    long st=System.currentTimeMillis();    Object result=pjp.proceed();    // 记录结束时间    long et=System.currentTimeMillis();    // 输出耗时    System.err.println(pjp.getSignature().getName()+&quot;-&gt; 耗时：&quot;+(et-st)+&quot;ms.&quot;);    return result;}</code></pre><p><code>pjp.proceed()</code>代表调用了目标方法，该目标方法可能是有返回值的方法，对于这类方法，应该接收方法的返回值，并在切面结束时返回该返回值。</p><p><code>pjp.proceed()</code>调用目标方法时，可能抛出异常<code>Throwable</code>，如果在切面方法中不需要对异常进行处理，可直接在签名中声明抛出。</p><p>需要在切面方法前添加<code>@Around</code>注解，指明该切面方法是在目标方法调用前和调用后都有逻辑执行，对应的也可以添加<code>@Before</code>或<code>@After</code>，但是一般没有必要。</p><p>在<code>@Around</code>注解后需要指明当前切面方法注入的目标位置，<code>@Around(&quot;execution(* cn.tedu.db.sys.service.impl.*.*(..))&quot;)</code>代表业务层所有的方法都被注入。</p><pre><code>* `execution()`为表达式的主体* 第一个&quot;*&quot;号表示返回值的类型任意* `cn.tedu.db.sys.service.impl`表示AOP所切的服务的包名* 第二个&quot;*&quot;表示类名，*即所有类* `.*(..)`表示任何方法名，括号表示参数，两个点表示任何参数类型</code></pre><h4 id="AOP中的一些基本概念："><a href="#AOP中的一些基本概念：" class="headerlink" title="AOP中的一些基本概念："></a>AOP中的一些基本概念：</h4><p>Aspect（切面）： Aspect声明类似于Java中的类声明，在Aspect中会包含着一些Pointcut以及相应的Advice。</p><p>Joint point（连接点）：表示在程序中明确定义的点，典型的包括方法调用，对类成员的访问以及异常处理程序块的执行等等，它自身还可以嵌套其它 joint point。</p><p>Pointcut（切点）：表示一组 joint point，这些 joint point 或是通过逻辑关系组合起来，或是通过通配、正则表达式等方式集中起来，它定义了相应的 Advice 将要发生的地方。</p><p>Advice（通知）：Advice 定义了在 Pointcut 里面定义的程序点具体要做的操作，它通过 before、after和around来区别是在每个joint point之前、之后还是代替执行的代码。</p><p>Target（目标对象）：织入 Advice 的目标对象。</p><p>Weaving（织入）：将 Aspect 和其他对象连接起来, 并创建 Adviced object 的过程</p><p>AOP proxy: 由AOP框架创建的对象，用于实现方面协定（建议方法执行等）。 在Spring框架中，AOP代理将是JDK动态代理或CGLIB代理。</p><p><img src= "/img/loading.gif" data-src="2.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AOP </tag>
+            
+            <tag> 面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JVM部分面试题</title>
       <link href="/2020/08/03/JVM%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
       <url>/2020/08/03/JVM%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
@@ -84,6 +111,31 @@
       <url>/2020/08/03/Java%E5%9F%BA%E7%A1%80/</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><ol><li><p>JDK和JRE有什么区别？</p><blockquote><p>JDK是Java开发工具包， JRE是Java运行环境。</p></blockquote></li><li><p>==和equals有什么区别？</p></li><li><p>两个对象的hashcode()相同，则equals()也一定为true，对吗，为什么？</p><blockquote><p>不对。</p><p>如果没有重写equals()方法，使用的就是Object类中的equals()方法，返回内存编码.</p><p>在集合中，比如HashSet中，要求放入的对象不能重复，怎么判定呢？</p><p>首先会调用hashcode，如果hashcode相等，则继续调用equals，也相等，则认为重复。</p><p>如果重写equals后，如果不重写hashcode，则hashcode就是继承自Object的，返回内存编码，这时候可能出现equals相等，而hashcode不等，你的对象使用集合时，就会等不到正确的结果</p></blockquote></li><li><p>final在Java中有什么作用？</p><blockquote><p>  定义类：不可继承。定义方法：不可重写。定义属性：值不可改变，定义之初就要赋值。</p></blockquote></li><li><p>Java中的math.round(-1.5)等于多少？</p><blockquote><p>-1。round()的结果会四舍五入，-1.5四舍五入后是-1。</p></blockquote></li><li><p>String属于基础的数据类型吗？</p><blockquote><p>不属于，String是一个类，八个基本数据类型是关键字</p></blockquote></li><li><p>Java中操作字符串都有哪些类？他们之间有什么区别？</p><blockquote><p>String, StringBuffer, StringBuilder</p></blockquote></li><li><p>String str = “i”与String str=new String(“i”)一样吗？ </p><blockquote><p>不一样 前者Java虚拟机会分配到内存空间中，后者会分配到堆内存中新开辟一块空间。</p></blockquote></li><li><p>如何将字符串反转？</p><blockquote><p>StringBuffer或StringBuilder的reverse()方法。</p></blockquote></li><li><p>String类的常用方法有哪些？</p><blockquote><p>lenth(), isEmpty(), replaceAll(), split(), trim(), toString()</p></blockquote></li><li><p>抽象类必须要有抽象方法吗？</p><blockquote><p>不是，抽象类可以有构造方法或普通方法。</p></blockquote></li><li><p>普通类和抽象类有哪些区别？</p><blockquote><p>普通类可以被实例化， 抽象类可以定义抽象方法，使用抽象类方便代码的复用。</p><p>抽象类的子类必须实现抽象类中所有的抽象方法，否则这个子类也是抽象类。</p></blockquote></li><li><p>抽象类能使用final修饰吗？</p><blockquote><p>不能。抽象类必须被继承，而使用final关键字后不能被继承，是冲突的。</p></blockquote></li><li><p>接口和抽象类有什么区别？</p><blockquote><p>接口更多的是在系统架构设计方法中发挥作用，更像是一种规范，而抽象类在代码实现方面发挥作用，方便代码的重用。</p><p>抽象类中可以实现方法，接口中只能有抽象方法。</p></blockquote></li><li><p>Java中IO流分为几种？</p><blockquote><p><strong>inputStream字节输入流，outputStream字节输出流，Writer字符输出流，Reader字符输入流</strong></p><p>按数据流向：输入流和输出流</p><p>按处理单位：字节流和字符流（JDK中Stream后缀的是字节流，Reader或Writer后缀的是字符流）</p><p>根据功能：节点流和处理流</p></blockquote></li><li><p>BIO、NIO、AIO、有什么区别？</p><blockquote><ul><li>BIO：<strong>同步并阻塞</strong>，服务器实现模式为一个<strong>连接一个线程</strong>，即客户端有连接请求时服务器端就需要启动一个线程进行处理，如果这个连接不做任何事情会造成不必要的线程开销，当然可以通过线程池机制改善。</li><li>NIO：<strong>同步非阻塞</strong>，服务器实现模式为一个<strong>请求一个线程</strong>，即客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有I/O请求时才启动一个线程进行处理。</li><li>AIO：<strong>异步非阻塞</strong>，服务器实现模式为一个<strong>有效请求一个线程</strong>，客户端的 IO 请求都是由 OS 先完成了再通知服务器应用去启动线程进行处理。</li></ul></blockquote></li><li><p>Files的常用方法有哪些？</p><blockquote><ul><li>Files.exists() 检测文件路径是否存在</li><li>Files.createFile()创建文件</li><li>Files.createDirectory()创建文件夹</li><li>Files.delete() 删除文件或者目录</li><li>Files.copy() 复制文件</li><li>Files.move() 移动文件</li><li>Files.size()查看文件个数</li><li>Files.read() 读取文件</li><li>Files.write()写入文件</li></ul></blockquote></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nginx部分面试题</title>
+      <link href="/2020/08/03/Nginx%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <url>/2020/08/03/Nginx%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>]]></content>
       
       
       <categories>
@@ -154,31 +206,6 @@
     
     
     <entry>
-      <title>Nginx部分面试题</title>
-      <link href="/2020/08/03/Nginx%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-      <url>/2020/08/03/Nginx%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 面试题 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 面试题 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>mybatis部分面试题</title>
       <link href="/2020/08/03/mybatis%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
       <url>/2020/08/03/mybatis%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
@@ -204,11 +231,11 @@
     
     
     <entry>
-      <title>多线程部分面试题</title>
-      <link href="/2020/08/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-      <url>/2020/08/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+      <title>容器部分面试题</title>
+      <link href="/2020/08/03/%E5%AE%B9%E5%99%A8%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <url>/2020/08/03/%E5%AE%B9%E5%99%A8%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><ol><li><p>并行和并发有什么区别？</p><ul><li>并行指多个事件在同一个时刻发生；并发指在某时刻只有一个事件在发生，某个时间段内由于 CPU 交替执行，可以发生多个事件。</li><li>并行没有对 CPU 资源的抢占；并发执行的线程需要对 CPU 资源进行抢占。</li><li>并行执行的线程之间不存在切换；并发操作系统会根据任务调度系统给线程分配线程的 CPU 执行时间，线程的执行会进行切换。</li></ul></li><li><p>线程和进程有什么区别？</p></li><li><p>守护线程是什么？</p><p>守护线程是程序运行的时候在后台提供一种通用服务的线程。所有用户线程停止，进程会停掉所有守护线程，退出程序。</p></li><li><p>创建线程有哪几种方式？</p><ol><li><strong>重写 Thread 类的 run() 方法。</strong></li><li><strong>实现 Runnable 接口，重写 run() 方法。</strong></li><li><strong>实现 Callable 接口，使用 FutureTask 类创建线程</strong></li><li><strong>使用线程池创建、启动线程</strong></li></ol></li><li><p>说一下runnable和callable有什么区别？</p><ul><li>Runnable 接口 run 方法无返回值；Callable 接口 call 方法有返回值，支持泛型</li><li>Runnable 接口 run 方法只能抛出运行时异常，且无法捕获处理；Callable 接口 call 方法允许抛出异常，可以获取异常信息</li></ul></li><li><p>线程有哪些状态？</p><p>新建、就绪、运行、阻塞、死亡</p></li><li><p>sleep()和wait()有什么区别？</p><ul><li>sleep() 是 Thread 类的静态本地方法；wait() 是Object类的成员本地方法</li><li>sleep() 方法可以在任何地方使用；wait() 方法则只能在同步方法或同步代码块中使用，否则抛出异常Exception in thread “Thread-0” java.lang.IllegalMonitorStateException</li><li>sleep() 会休眠当前线程指定时间，释放 CPU 资源，不释放对象锁，休眠时间到自动苏醒继续执行；wait() 方法放弃持有的对象锁，进入等待队列，当该对象被调用 notify() / notifyAll() 方法后才有机会竞争获取对象锁，进入运行状态</li></ul></li><li><p>notify()和notifyAll()有什么区别？</p></li><li><p>线程的run()和start()有什么区别？</p><ol><li>创建线程池有哪几种方式？</li></ol></li><li><p>线程池有哪些状态？</p></li><li><p>线程池submit()和execute()方法有什么区别？</p></li><li><p>在Java程序中怎么保证多线程的运行安全？</p></li><li><p>synchronized关键字的作用是什么？</p><p>Java 中关键字 synchronized 表示只有一个线程可以获取作用对象的锁，执行代码，阻塞其他线程。</p><ul><li>确保线程互斥地访问同步代码</li><li>保证共享变量的修改能够及时可见</li><li>有效解决重排序问题</li></ul></li><li><p>synchronized和volatile的区别是什么？</p><p><strong>作用：</strong></p><ul><li>synchronized 表示只有一个线程可以获取作用对象的锁，执行代码，阻塞其他线程。</li><li>volatile 表示变量在 CPU 的寄存器中是不确定的，必须从主存中读取。保证多线程环境下变量的可见性；禁止指令重排序。</li></ul></li></ol><pre><code>**区别：**- synchronized 可以作用于变量、方法、对象；volatile 只能作用于变量。- synchronized 可以保证线程间的有序性（个人猜测是无法保证线程内的有序性，即线程内的代码可能被 CPU 指令重排序）、原子性和可见性；volatile 只保证了可见性和有序性，无法保证原子性。- synchronized 线程阻塞，volatile 线程不阻塞。- volatile 本质是告诉 jvm 当前变量在寄存器中的值是不安全的需要从内存中读取；sychronized 则是锁定当前变量，只有当前线程可以访问到该变量其他线程被阻塞。- volatile 标记的变量不会被编译器优化；synchronized 标记的变量可以被编译器优化。</code></pre><ol start="15"><li><p>synchronized和Lock有什么区别？</p><ul><li>实现层面不一样。synchronized 是 Java 关键字，JVM层面 实现加锁和释放锁；Lock 是一个接口，在代码层面实现加锁和释放锁</li><li>是否自动释放锁。synchronized 在线程代码执行完或出现异常时自动释放锁；Lock 不会自动释放锁，需要再 finally {} 代码块显式地中释放锁</li><li>是否一直等待。synchronized 会导致线程拿不到锁一直等待；Lock 可以设置尝试获取锁或者获取锁失败一定时间超时</li><li>获取锁成功是否可知。synchronized 无法得知是否获取锁成功；Lock 可以通过 tryLock 获得加锁是否成功</li><li>功能复杂性。synchronized 加锁可重入、不可中断、非公平；Lock 可重入、可判断、可公平和不公平、细分读写锁提高效率</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><ol><li><p>Java容器都有哪些？</p><p><img src= "/img/loading.gif" data-src="/Users/fupeijun/Desktop/%E5%A4%8D%E4%B9%A0/%E9%9D%A2/20190727183756962.png" alt="20190727183756962"></p></li><li><p>collection和collections有什么区别？</p><p>collection是接口，collections是集合的工具类。</p></li><li><p>List、Set、Map之间的区别是什么？</p><ul><li>List：有序集合，元素可重复</li><li>Set：不重复集合，LinkedHashSet按照插入排序，SortedSet可排序，HashSet无序</li><li>Map：键值对集合，存储键、值和之间的映射；Key无序，唯一；value 不要求有序，允许重复</li></ul></li><li><p>HashMap和HashTable有什么区别？</p><ul><li>线程安全性不同。HashMap线程不安全；Hashtable 中的方法是Synchronize的。</li><li>key、value是否允许null。HashMap的key和value都是可以是null，key只允许一个null；Hashtable的key和value都不可为null。</li></ul></li><li><p>如何决定使用hashMap还是TreeMap？</p><ul><li>HashMap基于散列桶（数组和链表）实现；TreeMap基于红黑树实现。</li><li>HashMap不支持排序；TreeMap默认是按照Key值升序排序的，可指定排序的比较器，主要用于存入元素时对元素进行自动排序。</li><li>HashMap大多数情况下有更好的性能，尤其是读数据。在没有排序要求的情况下，使用HashMap。</li></ul><p>都是非线程安全。</p></li><li><p>说一下HashMap的实现原理？</p><ul><li>HashMap 基于 Hash 算法实现，通过 put(key,value) 存储，get(key) 来获取 value</li><li>当传入 key 时，HashMap 会根据 key，调用 hash(Object key) 方法，计算出 hash 值，根据 hash 值将 value 保存在 Node 对象里，Node 对象保存在数组里</li><li>当计算出的 hash 值相同时，称之为 hash 冲突，HashMap 的做法是用链表和红黑树存储相同 hash 值的 value</li><li>当 hash 冲突的个数：小于等于 8 使用链表；大于 8 时，使用红黑树解决链表查询慢的问题</li></ul></li><li><p>说一下HashSet的实现原理？</p><ul><li>HashSet 是基于 HashMap 实现的，查询速度特别快</li><li>HashMap 是支持 key 为 null 值的，所以 HashSet 支持添加 null 值</li><li>HashSet 存放自定义类时，自定义类需要重写 hashCode() 和 equals() 方法，确保集合对自定义类的对象的唯一性判断(具体判断逻辑，见 HashMap put() 方法，简单概括就是 key 进行 哈希。判断元素 hash 值是否相等、key 是否为同个对象、key 是否 equals。第 1 个条件为 true，2、3 有一个为 true，HashMap 即认为 key 相同)</li><li>无序、不可重复</li></ul></li><li><p>ArrayList和LinkedList的区别？</p><ul><li><p>ArrayList查询快，LinkedList增删快。</p></li><li><p>ArrayList 基于动态<strong>数组</strong>实现的非线程安全的集合；LinkedList 基于<strong>双向链表</strong>实现的非线程安全的集合。</p></li><li><p>对于随机 index 访问的 get 和 set 方法，一般 ArrayList 的速度要优于 LinkedList。因为 ArrayList 直接通过数组下标直接找到元素；LinkedList 要移动指针遍历每个元素直到找到为止。</p></li><li><p>新增和删除元素，一般 LinkedList 的速度要优于 ArrayList。因为 ArrayList 在新增和删除元素时，可能扩容和复制数组；LinkedList 实例化对象需要时间外，只需要修改节点指针即可。</p></li></ul></li><li><p>如何实现数组和List之间的转换？</p><p>数组转 List ，使用 JDK 中 java.util.Arrays 工具类的 asList 方法</p><p>List 转数组，使用 List 的 toArray 方法。无参 toArray 方法返回 Object 数组，传入初始化长度的数组对象，返回该对象数组</p></li><li><p>ArrayList和Vector之间的区别？</p><ul><li>底层都使用数组实现</li><li>功能相同，实现增删改查等操作的方法相似</li><li>长度可变的数组结构</li></ul><p>不同：vector线程安全</p></li><li><p>Array和ArrayList有何区别？</p><p>定义一个 Array 时，必须指定数组的数据类型及数组长度，即数组中存放的元素个数固定并且类型相同。</p><p>ArrayList 是动态数组，长度动态可变，会自动扩容。不使用泛型的时候，可以添加不同类型元素。</p></li><li><p>Queue中poll()和remove()有什么区别？</p><p>poll()在队列为空时返回null，而remove()会抛出NoSuchElementException异常。</p></li><li><p>哪些集合类是线程安全的？</p></li><li><p>迭代器Iterator是什么？</p><ul><li>Iterator 是可以遍历集合的对象，为各种容器提供了公共的操作接口，隔离对容器的遍历操作和底层实现，从而解耦。</li><li>缺点是增加新的集合类需要对应增加新的迭代器类，迭代器类与集合类成对增加。</li></ul></li><li><p>Iterator怎么使用？有什么特点？</p><ul><li>next() 方法获得集合中的下一个元素</li><li>hasNext() 检查集合中是否还有元素</li><li>remove() 方法将迭代器新返回的元素删除</li></ul></li><li><p>iterator和ListIterator有什么区别？</p><ul><li>ListIterator 继承 Iterator</li><li>ListIterator 比 Iterator多方法</li></ul></li><li><p>怎么确保一个集合不能被修改？</p><p>使用 JDK中java.util.Collections 类，unmodifiable*** 方法赋值原集合。</p></li></ol>]]></content>
       
       
       <categories>
@@ -229,11 +256,11 @@
     
     
     <entry>
-      <title>容器部分面试题</title>
-      <link href="/2020/08/03/%E5%AE%B9%E5%99%A8%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-      <url>/2020/08/03/%E5%AE%B9%E5%99%A8%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+      <title>多线程部分面试题</title>
+      <link href="/2020/08/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <url>/2020/08/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%83%A8%E5%88%86%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><ol><li><p>Java容器都有哪些？</p><p><img src= "/img/loading.gif" data-src="/Users/fupeijun/Desktop/%E5%A4%8D%E4%B9%A0/%E9%9D%A2/20190727183756962.png" alt="20190727183756962"></p></li><li><p>collection和collections有什么区别？</p><p>collection是接口，collections是集合的工具类。</p></li><li><p>List、Set、Map之间的区别是什么？</p><ul><li>List：有序集合，元素可重复</li><li>Set：不重复集合，LinkedHashSet按照插入排序，SortedSet可排序，HashSet无序</li><li>Map：键值对集合，存储键、值和之间的映射；Key无序，唯一；value 不要求有序，允许重复</li></ul></li><li><p>HashMap和HashTable有什么区别？</p><ul><li>线程安全性不同。HashMap线程不安全；Hashtable 中的方法是Synchronize的。</li><li>key、value是否允许null。HashMap的key和value都是可以是null，key只允许一个null；Hashtable的key和value都不可为null。</li></ul></li><li><p>如何决定使用hashMap还是TreeMap？</p><ul><li>HashMap基于散列桶（数组和链表）实现；TreeMap基于红黑树实现。</li><li>HashMap不支持排序；TreeMap默认是按照Key值升序排序的，可指定排序的比较器，主要用于存入元素时对元素进行自动排序。</li><li>HashMap大多数情况下有更好的性能，尤其是读数据。在没有排序要求的情况下，使用HashMap。</li></ul><p>都是非线程安全。</p></li><li><p>说一下HashMap的实现原理？</p><ul><li>HashMap 基于 Hash 算法实现，通过 put(key,value) 存储，get(key) 来获取 value</li><li>当传入 key 时，HashMap 会根据 key，调用 hash(Object key) 方法，计算出 hash 值，根据 hash 值将 value 保存在 Node 对象里，Node 对象保存在数组里</li><li>当计算出的 hash 值相同时，称之为 hash 冲突，HashMap 的做法是用链表和红黑树存储相同 hash 值的 value</li><li>当 hash 冲突的个数：小于等于 8 使用链表；大于 8 时，使用红黑树解决链表查询慢的问题</li></ul></li><li><p>说一下HashSet的实现原理？</p><ul><li>HashSet 是基于 HashMap 实现的，查询速度特别快</li><li>HashMap 是支持 key 为 null 值的，所以 HashSet 支持添加 null 值</li><li>HashSet 存放自定义类时，自定义类需要重写 hashCode() 和 equals() 方法，确保集合对自定义类的对象的唯一性判断(具体判断逻辑，见 HashMap put() 方法，简单概括就是 key 进行 哈希。判断元素 hash 值是否相等、key 是否为同个对象、key 是否 equals。第 1 个条件为 true，2、3 有一个为 true，HashMap 即认为 key 相同)</li><li>无序、不可重复</li></ul></li><li><p>ArrayList和LinkedList的区别？</p><ul><li><p>ArrayList查询快，LinkedList增删快。</p></li><li><p>ArrayList 基于动态<strong>数组</strong>实现的非线程安全的集合；LinkedList 基于<strong>双向链表</strong>实现的非线程安全的集合。</p></li><li><p>对于随机 index 访问的 get 和 set 方法，一般 ArrayList 的速度要优于 LinkedList。因为 ArrayList 直接通过数组下标直接找到元素；LinkedList 要移动指针遍历每个元素直到找到为止。</p></li><li><p>新增和删除元素，一般 LinkedList 的速度要优于 ArrayList。因为 ArrayList 在新增和删除元素时，可能扩容和复制数组；LinkedList 实例化对象需要时间外，只需要修改节点指针即可。</p></li></ul></li><li><p>如何实现数组和List之间的转换？</p><p>数组转 List ，使用 JDK 中 java.util.Arrays 工具类的 asList 方法</p><p>List 转数组，使用 List 的 toArray 方法。无参 toArray 方法返回 Object 数组，传入初始化长度的数组对象，返回该对象数组</p></li><li><p>ArrayList和Vector之间的区别？</p><ul><li>底层都使用数组实现</li><li>功能相同，实现增删改查等操作的方法相似</li><li>长度可变的数组结构</li></ul><p>不同：vector线程安全</p></li><li><p>Array和ArrayList有何区别？</p><p>定义一个 Array 时，必须指定数组的数据类型及数组长度，即数组中存放的元素个数固定并且类型相同。</p><p>ArrayList 是动态数组，长度动态可变，会自动扩容。不使用泛型的时候，可以添加不同类型元素。</p></li><li><p>Queue中poll()和remove()有什么区别？</p><p>poll()在队列为空时返回null，而remove()会抛出NoSuchElementException异常。</p></li><li><p>哪些集合类是线程安全的？</p></li><li><p>迭代器Iterator是什么？</p><ul><li>Iterator 是可以遍历集合的对象，为各种容器提供了公共的操作接口，隔离对容器的遍历操作和底层实现，从而解耦。</li><li>缺点是增加新的集合类需要对应增加新的迭代器类，迭代器类与集合类成对增加。</li></ul></li><li><p>Iterator怎么使用？有什么特点？</p><ul><li>next() 方法获得集合中的下一个元素</li><li>hasNext() 检查集合中是否还有元素</li><li>remove() 方法将迭代器新返回的元素删除</li></ul></li><li><p>iterator和ListIterator有什么区别？</p><ul><li>ListIterator 继承 Iterator</li><li>ListIterator 比 Iterator多方法</li></ul></li><li><p>怎么确保一个集合不能被修改？</p><p>使用 JDK中java.util.Collections 类，unmodifiable*** 方法赋值原集合。</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><ol><li><p>并行和并发有什么区别？</p><ul><li>并行指多个事件在同一个时刻发生；并发指在某时刻只有一个事件在发生，某个时间段内由于 CPU 交替执行，可以发生多个事件。</li><li>并行没有对 CPU 资源的抢占；并发执行的线程需要对 CPU 资源进行抢占。</li><li>并行执行的线程之间不存在切换；并发操作系统会根据任务调度系统给线程分配线程的 CPU 执行时间，线程的执行会进行切换。</li></ul></li><li><p>线程和进程有什么区别？</p></li><li><p>守护线程是什么？</p><p>守护线程是程序运行的时候在后台提供一种通用服务的线程。所有用户线程停止，进程会停掉所有守护线程，退出程序。</p></li><li><p>创建线程有哪几种方式？</p><ol><li><strong>重写 Thread 类的 run() 方法。</strong></li><li><strong>实现 Runnable 接口，重写 run() 方法。</strong></li><li><strong>实现 Callable 接口，使用 FutureTask 类创建线程</strong></li><li><strong>使用线程池创建、启动线程</strong></li></ol></li><li><p>说一下runnable和callable有什么区别？</p><ul><li>Runnable 接口 run 方法无返回值；Callable 接口 call 方法有返回值，支持泛型</li><li>Runnable 接口 run 方法只能抛出运行时异常，且无法捕获处理；Callable 接口 call 方法允许抛出异常，可以获取异常信息</li></ul></li><li><p>线程有哪些状态？</p><p>新建、就绪、运行、阻塞、死亡</p></li><li><p>sleep()和wait()有什么区别？</p><ul><li>sleep() 是 Thread 类的静态本地方法；wait() 是Object类的成员本地方法</li><li>sleep() 方法可以在任何地方使用；wait() 方法则只能在同步方法或同步代码块中使用，否则抛出异常Exception in thread “Thread-0” java.lang.IllegalMonitorStateException</li><li>sleep() 会休眠当前线程指定时间，释放 CPU 资源，不释放对象锁，休眠时间到自动苏醒继续执行；wait() 方法放弃持有的对象锁，进入等待队列，当该对象被调用 notify() / notifyAll() 方法后才有机会竞争获取对象锁，进入运行状态</li></ul></li><li><p>notify()和notifyAll()有什么区别？</p></li><li><p>线程的run()和start()有什么区别？</p><ol><li>创建线程池有哪几种方式？</li></ol></li><li><p>线程池有哪些状态？</p></li><li><p>线程池submit()和execute()方法有什么区别？</p></li><li><p>在Java程序中怎么保证多线程的运行安全？</p></li><li><p>synchronized关键字的作用是什么？</p><p>Java 中关键字 synchronized 表示只有一个线程可以获取作用对象的锁，执行代码，阻塞其他线程。</p><ul><li>确保线程互斥地访问同步代码</li><li>保证共享变量的修改能够及时可见</li><li>有效解决重排序问题</li></ul></li><li><p>synchronized和volatile的区别是什么？</p><p><strong>作用：</strong></p><ul><li>synchronized 表示只有一个线程可以获取作用对象的锁，执行代码，阻塞其他线程。</li><li>volatile 表示变量在 CPU 的寄存器中是不确定的，必须从主存中读取。保证多线程环境下变量的可见性；禁止指令重排序。</li></ul></li></ol><pre><code>**区别：**- synchronized 可以作用于变量、方法、对象；volatile 只能作用于变量。- synchronized 可以保证线程间的有序性（个人猜测是无法保证线程内的有序性，即线程内的代码可能被 CPU 指令重排序）、原子性和可见性；volatile 只保证了可见性和有序性，无法保证原子性。- synchronized 线程阻塞，volatile 线程不阻塞。- volatile 本质是告诉 jvm 当前变量在寄存器中的值是不安全的需要从内存中读取；sychronized 则是锁定当前变量，只有当前线程可以访问到该变量其他线程被阻塞。- volatile 标记的变量不会被编译器优化；synchronized 标记的变量可以被编译器优化。</code></pre><ol start="15"><li><p>synchronized和Lock有什么区别？</p><ul><li>实现层面不一样。synchronized 是 Java 关键字，JVM层面 实现加锁和释放锁；Lock 是一个接口，在代码层面实现加锁和释放锁</li><li>是否自动释放锁。synchronized 在线程代码执行完或出现异常时自动释放锁；Lock 不会自动释放锁，需要再 finally {} 代码块显式地中释放锁</li><li>是否一直等待。synchronized 会导致线程拿不到锁一直等待；Lock 可以设置尝试获取锁或者获取锁失败一定时间超时</li><li>获取锁成功是否可知。synchronized 无法得知是否获取锁成功；Lock 可以通过 tryLock 获得加锁是否成功</li><li>功能复杂性。synchronized 加锁可重入、不可中断、非公平；Lock 可重入、可判断、可公平和不公平、细分读写锁提高效率</li></ul></li></ol>]]></content>
       
       
       <categories>
