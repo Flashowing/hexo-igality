@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>项目经验问题 | 二号线的猪猪</title><meta name="description" content="你做了哪些项目？描述一下你的项目？​        项目功能……用了哪些技术…… 我做了两个项目，一个是博客项目，这个项目是一个Springboot聚合项目，有多个模块，使用到了eureka注册中心 zuul技术来实现多个服务器模块之前的调用，项目实现了一些博客的基本功能，项目的特点是实现了用户可以通过多种方式进行登录，前端页面能够响应式布局，让PC端和手机端都能够有良好的用户体验。并且使用Ngi"><meta name="keywords" content="面试题"><meta name="author" content="Flashowing"><meta name="copyright" content="Flashowing"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://www.igality.com/2020/08/28/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E9%97%AE%E9%A2%98/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="HSJEYp9WF2"/><meta property="og:type" content="article"><meta property="og:title" content="项目经验问题"><meta property="og:url" content="http://www.igality.com/2020/08/28/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E9%97%AE%E9%A2%98/"><meta property="og:site_name" content="二号线的猪猪"><meta property="og:description" content="你做了哪些项目？描述一下你的项目？​        项目功能……用了哪些技术…… 我做了两个项目，一个是博客项目，这个项目是一个Springboot聚合项目，有多个模块，使用到了eureka注册中心 zuul技术来实现多个服务器模块之前的调用，项目实现了一些博客的基本功能，项目的特点是实现了用户可以通过多种方式进行登录，前端页面能够响应式布局，让PC端和手机端都能够有良好的用户体验。并且使用Ngi"><meta property="og:image" content="https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/img-2.jpg"><meta property="article:published_time" content="2020-08-28T08:54:25.347Z"><meta property="article:modified_time" content="2020-09-15T13:32:17.579Z"><meta name="twitter:card" content="summary"><link rel="manifest" href="manifest.json"/><meta name="theme-color" content="#fff"/><meta name="msapplication-TileColor" content="#fff"/><link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png"/><link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#5bbad5"/><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="next" title="AOP" href="http://www.igality.com/2020/08/26/AOP/"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c299b1a439c996632c8ca606466a03e2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"简","msgToSimplifiedChinese":"繁"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="baidu-site-verification" content="lSW7QNsTj7" /><style type="text/css">.app-refresh{position:fixed;top:-2.2rem;left:0;right:0;z-index:99999;padding:0 1rem;font-size:15px;height:2.2rem;transition:all .3s ease}.app-refresh-wrap{display:flex;color:#fff;height:100%;align-items:center;justify-content:center}.app-refresh-wrap a{color:#fff;text-decoration:underline;cursor:pointer}</style><meta name="generator" content="Hexo 4.2.1"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/img_4829.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">38</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">13</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 拓展</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/reprint/"><i class="fa-fw fa fa-share-square"></i><span> 转载</span></a></li><li><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#你做了哪些项目？描述一下你的项目？"><span class="toc-number">1.</span> <span class="toc-text">你做了哪些项目？描述一下你的项目？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用到了哪些技术？为什么要用这些技术？是否有更好的技术方案？"><span class="toc-number">2.</span> <span class="toc-text">用到了哪些技术？为什么要用这些技术？是否有更好的技术方案？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么使用Shiro而不是Spring-Security？"><span class="toc-number">3.</span> <span class="toc-text">为什么使用Shiro而不是Spring Security？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#遇到了哪些问题？如何解决这些问题的？"><span class="toc-number">4.</span> <span class="toc-text">遇到了哪些问题？如何解决这些问题的？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Shiro多Realm的认证问题："><span class="toc-number">4.1.</span> <span class="toc-text">Shiro多Realm的认证问题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客发送图片和文字不可兼得的问题："><span class="toc-number">4.2.</span> <span class="toc-text">博客发送图片和文字不可兼得的问题：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#考官：你的职业规化是怎么样的呢？（考官是项目经理）"><span class="toc-number">5.</span> <span class="toc-text">考官：你的职业规化是怎么样的呢？（考官是项目经理）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#有没有你觉得自己擅长而又没被问到的东西？你最擅长的地方-你最擅长的技术是什么"><span class="toc-number">6.</span> <span class="toc-text">有没有你觉得自己擅长而又没被问到的东西？你最擅长的地方 你最擅长的技术是什么?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#谈谈你们是怎么样对这个项目开发的吗？"><span class="toc-number">7.</span> <span class="toc-text">谈谈你们是怎么样对这个项目开发的吗？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#你项目里有什么亮点？"><span class="toc-number">8.</span> <span class="toc-text">你项目里有什么亮点？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是微服务？"><span class="toc-number">9.</span> <span class="toc-text">什么是微服务？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#怎么处理的跨域问题？"><span class="toc-number">10.</span> <span class="toc-text">怎么处理的跨域问题？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是zuul网关？"><span class="toc-number">11.</span> <span class="toc-text">什么是zuul网关？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是Eureka？"><span class="toc-number">12.</span> <span class="toc-text">什么是Eureka？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#怎么做的异常处理？"><span class="toc-number">13.</span> <span class="toc-text">怎么做的异常处理？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shiro"><span class="toc-number">14.</span> <span class="toc-text">Shiro</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Shiro登录流程？"><span class="toc-number">14.1.</span> <span class="toc-text">Shiro登录流程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shiro怎么实现多realm认证的？"><span class="toc-number">14.2.</span> <span class="toc-text">Shiro怎么实现多realm认证的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shiro主要功能"><span class="toc-number">14.3.</span> <span class="toc-text">Shiro主要功能</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JWT流程"><span class="toc-number">15.</span> <span class="toc-text">JWT流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql怎么设置隔离级别"><span class="toc-number">16.</span> <span class="toc-text">mysql怎么设置隔离级别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#你的项目中用的什么隔离级别"><span class="toc-number">17.</span> <span class="toc-text">你的项目中用的什么隔离级别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql怎么做的优化"><span class="toc-number">18.</span> <span class="toc-text">mysql怎么做的优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目中技术的版本"><span class="toc-number">19.</span> <span class="toc-text">项目中技术的版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自己应该主动谈到的点"><span class="toc-number">20.</span> <span class="toc-text">自己应该主动谈到的点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#你常用的设计模式有哪些？"><span class="toc-number">20.1.</span> <span class="toc-text">你常用的设计模式有哪些？</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/img-2.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">二号线的猪猪</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-comments"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 拓展</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/reprint/"><i class="fa-fw fa fa-share-square"></i><span> 转载</span></a></li><li><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">项目经验问题</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-08-28 16:54:25"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-08-28</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-09-15 21:32:17"><i class="fas fa-history fa-fw"></i> 更新于 2020-09-15</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">2.6k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 7 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="你做了哪些项目？描述一下你的项目？"><a href="#你做了哪些项目？描述一下你的项目？" class="headerlink" title="你做了哪些项目？描述一下你的项目？"></a>你做了哪些项目？描述一下你的项目？</h1><p>​        项目功能……用了哪些技术……</p>
+<p>我做了两个项目，一个是博客项目，这个项目是一个Springboot聚合项目，有多个模块，使用到了eureka注册中心 zuul技术来实现多个服务器模块之前的调用，项目实现了一些博客的基本功能，项目的特点是实现了用户可以通过多种方式进行登录，前端页面能够响应式布局，让PC端和手机端都能够有良好的用户体验。并且使用Nginx将该项目部署在服务器上，能够通过https进行访问。</p>
+<p>还有一个客户后台管理系统，这个系统主要的特点是实现不同身份的人员登录能够获得不同的权限功能，使用的是Shiro安全框架进行权限认证，管理员拥有所有权限可以做一系列操作，而销售员只能够对自己和自己客户的数据进行修改。项目中使用了AOP思想进行日志管理，记录用户所进行的操作。</p>
+<p>负责哪些环节？</p>
+<h1 id="用到了哪些技术？为什么要用这些技术？是否有更好的技术方案？"><a href="#用到了哪些技术？为什么要用这些技术？是否有更好的技术方案？" class="headerlink" title="用到了哪些技术？为什么要用这些技术？是否有更好的技术方案？"></a>用到了哪些技术？为什么要用这些技术？是否有更好的技术方案？</h1><p>用到了session/cookie，通过jsessionid来判断用户登录，可以使用jwt技术（json web token）实现登录状态判断。</p>
+<p>使用了shiro安全框架做登录验证；</p>
+<p>Eureka”发现“框架做注册中心，让各服务器在Eureka服务器上注册，使得之间能够互相调用；</p>
+<p>Zuul网关，让客户端在访问时，都只会直接访问网关，而不会，也不可以直接访问到集群中的其它服务器！</p>
+<h1 id="为什么使用Shiro而不是Spring-Security？"><a href="#为什么使用Shiro而不是Spring-Security？" class="headerlink" title="为什么使用Shiro而不是Spring Security？"></a>为什么使用Shiro而不是Spring Security？</h1><p>Shiro拥有易于理解的API，在配置上相对于Spring Security更简单，在小型项目中更方便调试及开发效率更高。</p>
+<h1 id="遇到了哪些问题？如何解决这些问题的？"><a href="#遇到了哪些问题？如何解决这些问题的？" class="headerlink" title="遇到了哪些问题？如何解决这些问题的？"></a>遇到了哪些问题？如何解决这些问题的？</h1><h2 id="Shiro多Realm的认证问题："><a href="#Shiro多Realm的认证问题：" class="headerlink" title="Shiro多Realm的认证问题："></a>Shiro多Realm的认证问题：</h2><p>​            1.自定义类重写doMultiRealmAuthentication, shiro框架默认使用的是singlerealmAuthentication，处理单个认证。2.在shiro配置类中创建这个自定义类的对象，将所有的realm添加进去，shiro框架就会通过所传过来的token类型来找对对应的realm，然后进行授权验证。</p>
+<h2 id="博客发送图片和文字不可兼得的问题："><a href="#博客发送图片和文字不可兼得的问题：" class="headerlink" title="博客发送图片和文字不可兼得的问题："></a>博客发送图片和文字不可兼得的问题：</h2><p>​            因为用户在发送博客的时候，可以选择是否发送图片，而控制器方法中有mutipartfile参数，如果这个参数没有传入值，那么就会报空指针异常，那我就用了一种有点笨的方法，写了两个控制器方法，一个方法处理只发送文字，一个方法处理文字和图片都可以发送，如果只发送文字就只调用对应的方法，在前端区别的的时候就用了两个按钮，一个按钮对应一个方法这样来做。 我这种做法本来的思想是文字和图片这个文件共同发送，但是我后来看到别人的代码里面，如果用户添加了图片，这个时候处于预览模式，用户并没有点击发布按钮，但是我们仍然将这张图片发送到了服务器，就是说提前单独发送了这张图片，那么如果用户点击发布的时候，控制器方法再接收的时候，就不是文字加文件的形式了，而是文字加上图片路径的方式。总结一下就是我本身在图片预览时是使用base64本地预览的，但好的方案是在预览时就从服务器读取资源进行预览。</p>
+<p>举个例子：你的项目是 SSM搭建的，是否可以告知搭建项目的过程和需要注意的地方是什么吗？</p>
+<h1 id="考官：你的职业规化是怎么样的呢？（考官是项目经理）"><a href="#考官：你的职业规化是怎么样的呢？（考官是项目经理）" class="headerlink" title="考官：你的职业规化是怎么样的呢？（考官是项目经理）"></a>考官：你的职业规化是怎么样的呢？（考官是项目经理）</h1><p>​    令狐冲：我思维能力比较强，擅于逻辑分析。在之前的工作中积累了一定的架构经验，以后就想成为一名架构师和技术专家</p>
+<h1 id="有没有你觉得自己擅长而又没被问到的东西？你最擅长的地方-你最擅长的技术是什么"><a href="#有没有你觉得自己擅长而又没被问到的东西？你最擅长的地方-你最擅长的技术是什么" class="headerlink" title="有没有你觉得自己擅长而又没被问到的东西？你最擅长的地方 你最擅长的技术是什么?"></a>有没有你觉得自己擅长而又没被问到的东西？你最擅长的地方 你最擅长的技术是什么?</h1><p>小程序？自学？JWT？</p>
+<h1 id="谈谈你们是怎么样对这个项目开发的吗？"><a href="#谈谈你们是怎么样对这个项目开发的吗？" class="headerlink" title="谈谈你们是怎么样对这个项目开发的吗？"></a>谈谈你们是怎么样对这个项目开发的吗？</h1><p>​        在代码编写阶段，先统一完成所有的实体类。对于非实体类则先完成类的框架，也就是只写方法和注释文字。具体方法的实现暂时为空。然后再进行代码填写。每完成一个类的代码编译通过后都要进行重构和单元测试。每完成一个功能和模块都由会由小组长进行集成测试。使得完成的模块是一个真正可以运行的，可见的功能实现。</p>
+<h1 id="你项目里有什么亮点？"><a href="#你项目里有什么亮点？" class="headerlink" title="你项目里有什么亮点？"></a>你项目里有什么亮点？</h1><p> 你与众不同之处 你是怎么进行项目开发的,有什么特别之处,或者你在哪些项目中取得过哪些成功,或者有哪些自己觉得骄傲的地方？</p>
+<p>多方式登录，看开放文档，发送真实短信</p>
+<h1 id="什么是微服务？"><a href="#什么是微服务？" class="headerlink" title="什么是微服务？"></a>什么是微服务？</h1><p>微服务是一种用于构建应用的架构方案。微服务架构有别于更为传统的单体式方案，可将应用拆分成多个核心功能。每个功能都被称为一项服务，可以单独构建和部署，这意味着各项服务在工作（和出现故障）时不会相互影响。</p>
+<h1 id="怎么处理的跨域问题？"><a href="#怎么处理的跨域问题？" class="headerlink" title="怎么处理的跨域问题？"></a>怎么处理的跨域问题？</h1><p>会重写shiro里一个过滤器中的prehandle方法，在httpServletResponse中给请求头添加“Access-Control-Allow-Origin”</p>
+<h1 id="什么是zuul网关？"><a href="#什么是zuul网关？" class="headerlink" title="什么是zuul网关？"></a>什么是zuul网关？</h1><p>Spring Cloud中的Zuul网关是“网关路由”，当整个架构中使用了Zuul以后，在后续客户端进行访问时，都只会直接访问网关，而不会，也不可以直接访问到集群中的其它服务器！</p>
+<p>所以，Zuul网关是提供了整个架构的统一入口，并实现转发，使得其它服务器去完成具体的数据处理！在这一点来看，与SpringMVC中的<code>DispatcherServlet</code>是有一定相似之处的！</p>
+<p>在一个构架中，Zuul的主要作用有：</p>
+<ul>
+<li>路由功能，甚至动态路由；</li>
+<li>身份验证与其它安全性相关的验证；</li>
+<li>减少负载；</li>
+<li>其它。</li>
+</ul>
+<h1 id="什么是Eureka？"><a href="#什么是Eureka？" class="headerlink" title="什么是Eureka？"></a>什么是Eureka？</h1><p>Eureka是Spring Cloud中的一种“发现”框架，其作用在于：在集群项目中，各微服务项目是部署在不同的服务器上的，并且，各微服务项目可能需要彼此协作才可以完成整个任务，即存在“服务器与服务器之间的调用”，但是，可能存在“新服务上线”、“原本正常运行的某服务器因为特殊原因或故障而变为不可用”等问题，需要使用比较明确的方式使是“各服务器都能知道其它服务器在哪里（主机名称或IP地址是多少，端口号是多少等）”，发现框架起到的主要作用就是：</p>
+<ul>
+<li>其它各服务器都会在“发现”服务器上进行注册；</li>
+<li>“发现”服务器使用“注册表”记录下当前整个集群中已经注册的所有服务器；</li>
+<li>其它各服务器都可以从“发现服务器”上抓取注册表，从而得知集群中有哪些其它服务器，及这些服务器的相关信息。</li>
+</ul>
+<h1 id="怎么做的异常处理？"><a href="#怎么做的异常处理？" class="headerlink" title="怎么做的异常处理？"></a>怎么做的异常处理？</h1><p>对于项目中可能会遇到的非受检异常，都自定义异常类，继承自ServiceException，将这个异常try-catch，然后通过mvc的@ExceptionHandler注解捕获所有的ServiceException，进行统一的异常处理。</p>
+<h1 id="Shiro"><a href="#Shiro" class="headerlink" title="Shiro"></a>Shiro</h1><h2 id="Shiro登录流程？"><a href="#Shiro登录流程？" class="headerlink" title="Shiro登录流程？"></a>Shiro登录流程？</h2><ol>
+<li>获取subject对象</li>
+<li>将用户输入的信息封装到token里</li>
+<li>通过subject对象提交用户信息，交给shiro框架认证</li>
+<li>调用subject.login()方法进行认证</li>
+<li>成功得到用户登录信息</li>
+<li>返回登录结果</li>
+</ol>
+<h2 id="Shiro怎么实现多realm认证的？"><a href="#Shiro怎么实现多realm认证的？" class="headerlink" title="Shiro怎么实现多realm认证的？"></a>Shiro怎么实现多realm认证的？</h2><ol>
+<li>自定义类重写doMultiRealmAuthentication, shiro框架默认使用的是singlerealmAuthentication，处理单个认证。</li>
+<li>在shiro配置类中创建这个自定义类的对象，将所有的realm添加进去。</li>
+</ol>
+<h2 id="Shiro主要功能"><a href="#Shiro主要功能" class="headerlink" title="Shiro主要功能"></a>Shiro主要功能</h2><p>三个核心组件：Subject, SecurityManager 和 Realms。</p>
+<p>Subject：即“当前操作用户”。但是，在Shiro中，Subject这一概念并不仅仅指人，也可以是第三方进程、后台帐户（Daemon Account）或其他类似事物。它仅仅意味着“当前跟软件交互的东西”。</p>
+<p>Subject代表了当前用户的安全操作，SecurityManager则管理所有用户的安全操作。</p>
+<p>SecurityManager：它是Shiro框架的核心，典型的Facade模式，Shiro通过SecurityManager来管理内部组件实例，并通过它来提供安全管理的各种服务。</p>
+<p>Realm：Realm充当了Shiro与应用安全数据间的“桥梁”或者“连接器”。也就是说，当对用户执行认证（登录）和授权（访问控制）验证时，Shiro会从应用配置的Realm中查找用户及其权限信息。</p>
+<h1 id="JWT流程"><a href="#JWT流程" class="headerlink" title="JWT流程"></a>JWT流程</h1><ul>
+<li>用户使用用户名密码来请求服务器</li>
+<li>服务器进行验证用户的信息</li>
+<li>服务器通过验证发送给用户一个token</li>
+<li>客户端存储token，并在每次请求时附送上这个token值</li>
+<li>服务端验证token值，并返回数据</li>
+</ul>
+<h1 id="mysql怎么设置隔离级别"><a href="#mysql怎么设置隔离级别" class="headerlink" title="mysql怎么设置隔离级别"></a>mysql怎么设置隔离级别</h1><pre><code class="mysql">show global variables like &#39;%isolation%&#39;;</code></pre>
+<pre><code class="mysql">set global transaction_isolation =&#39;read-committed&#39;;</code></pre>
+<h1 id="你的项目中用的什么隔离级别"><a href="#你的项目中用的什么隔离级别" class="headerlink" title="你的项目中用的什么隔离级别"></a>你的项目中用的什么隔离级别</h1><p>MySQL默认使用repeatable read可重复读的隔离级别，因为历史原因，5.0之前binlog只支持<code>STATEMENT</code>这种格式！而这种格式在<strong>读已提交(Read Commited)</strong> 出现了主从不一致性的问题！</p>
+<p>互联网项目中应该使用read commit读已提交</p>
+<h1 id="mysql怎么做的优化"><a href="#mysql怎么做的优化" class="headerlink" title="mysql怎么做的优化"></a>mysql怎么做的优化</h1><h1 id="项目中技术的版本"><a href="#项目中技术的版本" class="headerlink" title="项目中技术的版本"></a>项目中技术的版本</h1><h1 id="自己应该主动谈到的点"><a href="#自己应该主动谈到的点" class="headerlink" title="自己应该主动谈到的点"></a>自己应该主动谈到的点</h1><p>小程序，jwt，良好的学习能力（自己看了QQ，微博的开发文档，开发登录功能）</p>
+<h2 id="你常用的设计模式有哪些？"><a href="#你常用的设计模式有哪些？" class="headerlink" title="你常用的设计模式有哪些？"></a>你常用的设计模式有哪些？</h2></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Flashowing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.igality.com/2020/08/28/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E9%97%AE%E9%A2%98/">http://www.igality.com/2020/08/28/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E9%97%AE%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.igality.com" target="_blank">二号线的猪猪</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></div><div class="post_share"><div class="social-share" data-image="https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/img-2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/08/26/AOP/"><img class="next-cover" data-src="https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/Samoyed.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">AOP</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/08/26/AOP/" title="AOP"><img class="relatedPosts_cover" data-src="https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/Samoyed.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-26</div><div class="relatedPosts_title">AOP</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/25/spring设计模式/" title="Spring设计模式"><img class="relatedPosts_cover" data-src="https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/img-2.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-25</div><div class="relatedPosts_title">Spring设计模式</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/22/字节流和字符流区别与适用场景/" title="字节流和字符流区别与适用场景"><img class="relatedPosts_cover" data-src="https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/Samoyed.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-22</div><div class="relatedPosts_title">字节流和字符流区别与适用场景</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/03/MySql部分面试题/" title="MySql部分面试题"><img class="relatedPosts_cover" data-src="https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/Samoyed.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-03</div><div class="relatedPosts_title">MySql部分面试题</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/03/Java基础/" title="Java基础部分面试题"><img class="relatedPosts_cover" data-src="https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/Samoyed.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-03</div><div class="relatedPosts_title">Java基础部分面试题</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/03/Redis部分面试题/" title="Redis部分面试题"><img class="relatedPosts_cover" data-src="https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/Samoyed.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-03</div><div class="relatedPosts_title">Redis部分面试题</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'昵称,邮箱,网站链接')
+var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: '9mJMvEmD3hy65lYYEAVbe0UG-MdYXbMMI',
+  appKey: '7xoXKvHKfdcL45EJa5urtpew',
+  placeholder: '记得留下你的昵称和邮箱....可以快速收到回复',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'en',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: false,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" style="background-image: url(https://hexo-1301474191.cos.ap-chongqing.myqcloud.com/img-2.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By Flashowing</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="icp"><a href="http://www.beian.miit.gov.cn"><span>渝ICP备20002043号-5</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script defer id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><div class="app-refresh" id="app-refresh"> <div class="app-refresh-wrap"> <label>✨ 网站已更新最新版本 👉</label> <a href="javascript:void(0)" onclick="location.reload()">点击刷新</a> </div></div><script>function showNotification(){if(GLOBAL_CONFIG.Snackbar){var t="light"===document.documentElement.getAttribute("data-theme")?GLOBAL_CONFIG.Snackbar.bgLight:GLOBAL_CONFIG.Snackbar.bgDark,e=GLOBAL_CONFIG.Snackbar.position;Snackbar.show({text:"已更新最新版本",backgroundColor:t,duration:5e5,pos:e,actionText:"点击刷新",actionTextColor:"#fff",onActionClick:function(t){location.reload()}})}else{var o=`top: 0; background: ${"light"===document.documentElement.getAttribute("data-theme")?"#49b1f5":"#1f1f1f"};`;document.getElementById("app-refresh").style.cssText=o}}"serviceWorker"in navigator&&(navigator.serviceWorker.controller&&navigator.serviceWorker.addEventListener("controllerchange",function(){showNotification()}),window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")}));</script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>
