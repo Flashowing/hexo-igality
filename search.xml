@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>测试重新发布Hexo博客</title>
+      <link href="/2021/03/15/%E6%B5%8B%E8%AF%95%E9%87%8D%E6%96%B0%E5%8F%91%E5%B8%83Hexo%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2021/03/15/%E6%B5%8B%E8%AF%95%E9%87%8D%E6%96%B0%E5%8F%91%E5%B8%83Hexo%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>测试 Hello，Hexo！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>项目经验问题</title>
       <link href="/2020/08/28/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E9%97%AE%E9%A2%98/"/>
       <url>/2020/08/28/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E9%97%AE%E9%A2%98/</url>
